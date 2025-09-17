@@ -1,0 +1,933 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ✅ SEO Meta Tags -->
+    <meta name="description" content="Net Express Courier offers fast, reliable, and affordable delivery services. From local courier to international logistics, we ensure secure and on-time shipping solutions.">
+    <meta name="keywords" content="Net Express Courier, courier service, fast delivery, logistics, shipping, transportation, express delivery, Nigeria courier">
+    <meta name="author" content="Net Express Courier">
+
+    <!-- ✅ Open Graph (Facebook & Social Media) -->
+    <meta property="og:title" content="Net Express Courier - Fast & Reliable Delivery Services">
+    <meta property="og:description" content="Your trusted partner for fast, reliable, and affordable courier & logistics services.">
+    <meta property="og:image" content="{% static 'assets/img/logo_dark.png' %}">
+    <meta property="og:url" content="https://www.netexpress.com">
+    <meta property="og:type" content="website">
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Net Express Courier - Fast & Reliable Delivery Services">
+    <meta name="twitter:description" content="We provide courier & logistics services with speed, security, and reliability.">
+    <meta name="twitter:image" content="{% static 'assets/img/logo_dark.png' %}">
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+
+
+    <!-- ========== Page Title ========== -->
+    <title>Net Express Courier - Contact Us</title>
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}" type="image/x-icon">
+
+    <!-- ✅ Schema.org Markup (Business Info for Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CourierService",
+      "name": "Net Express Courier",
+      "image": "https://www.netexpress.com/assets/img/logo_dark.png",
+      "@id": "https://www.netexpress.com",
+      "url": "https://www.netexpress.com",
+      "telephone": "+234-800-123-4567",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Courier Street",
+        "addressLocality": "Lagos",
+        "addressRegion": "LA",
+        "postalCode": "100001",
+        "addressCountry": "NG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 6.5244,
+        "longitude": 3.3792
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "20:00"
+      }],
+      "sameAs": [
+        "https://facebook.com/netexpress",
+        "https://twitter.com/netexpress",
+        "https://instagram.com/netexpress"
+      ]
+    }
+    </script>
+
+   <!-- ========== Start Stylesheet ========== -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/tranzi-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/validnavs.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/helper.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/unit-test.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <!-- ========== End Stylesheet ========== -->
+
+    <style>
+
+        /* Tracking Progress */
+.tracking-steps::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #e0e0e0;
+    z-index: 1;
+}
+.tracking-steps .step {
+    position: relative;
+    z-index: 2;
+}
+.tracking-steps .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    background: #ccc;
+    color: #fff;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.tracking-steps .step.active .circle,
+.tracking-steps .step.completed .circle {
+    background: #28a745;
+}
+.tracking-steps .step.completed .label {
+    font-weight: bold;
+    color: #28a745;
+}
+/* Receipt Card */
+.receipt-card {
+    border-radius: 8px;
+}
+
+
+    </style>
+
+</head>
+
+<body>
+    <!-- ✅ Preloader -->
+    <div id="preloader">
+        <div class="tranzi-loader-inner">
+           <div class="tranzi-loader">
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+           </div>
+        </div>
+     </div>
+    <!-- End Preloader -->
+
+    <!-- Header 
+    ============================================= -->
+    <header>
+        <!-- Start Navigation -->
+        <nav class="navbar mobile-sidenav navbar-default validnavs navbar-sticky">
+
+            <!-- Start Top Search -->
+            <div class="top-search">
+                <div class="container-xl">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Search -->
+
+
+            <div class="container d-flex justify-content-between align-items-center">            
+
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'home' %}">
+                        <img src="{% static 'assets/img/logo_dark.png' %}" class="logo" alt="Logo">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+
+                    <img src="{% static 'assets/img/logo_dark.png' %}" alt="Logo">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                    
+                        <li>
+                            <a class="smooth-menu" href="#about">About</a>
+                        </li>
+
+                        <li>
+                            <a class="smooth-menu" href="#services">Services</a>
+                        </li>
+
+                        <li>
+                            <a class="smooth-menu" href="#projects">Projects</a>
+                        </li>
+                        <li>
+                            <a class="smooth-menu" href="contact-us.html">Contact Us</a>
+                        </li>
+              
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+
+                <div class="attr-right">
+                    <!-- Start Atribute Navigation -->
+                    <div class="attr-nav">
+                        <ul>
+                            <li class="contact">
+                                <div class="call">
+                                    <div class="icon">
+                                        <i class="fas fa-comments-alt-dollar"></i>
+                                    </div>
+                                    <div class="info">
+                                        <p>Have any Questions?</p>
+                                        <h5><a href="mailto:info@NetExpress.com">info@NetExpress.com</a></h5>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End Atribute Navigation -->
+                </div>
+
+
+            </div>   
+            <!-- Overlay screen for menu -->
+            <div class="overlay-screen"></div>
+            <!-- End Overlay screen for menu -->
+
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Header -->
+
+
+    <!-- ✅ Breadcrumb -->
+    <div class="breadcrumb-area with-banner bg-cover text-center bg-dark text-light" style="background-image: url({% static 'assets/img/banner/15.jpg' %});">
+        <div class="container">
+            <h1>Track product</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="active">Tracking</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- Start Tracking Area -->
+<div class="contact-area default-padding bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 contact-items">
+                <div class="row">
+                    <!-- Tracking Progress -->
+                    <div class="col-lg-12 mb-5">
+                        <h2 class="mb-4 text-center fw-bold text-theme">Track Your Package</h2>
+                        {% with status=courier.status %}
+                        <div class="tracking-steps d-flex justify-content-between mb-5 position-relative">
+                            <!-- Progress Line -->
+                            <div class="progress-line"></div>
+                            
+                            <!-- Step 1: Order Placed -->
+                            <div class="step {% if status in 'Order Placed,In Transit,Out for Delivery,Delivered' %}completed{% endif %} text-center">
+                                <div class="circle" title="Order Placed">
+                                    {% if status in 'Order Placed,In Transit,Out for Delivery,Delivered' %}
+                                        <i class="fas fa-check"></i>
+                                    {% else %}
+                                        <i class="fas fa-shopping-cart"></i>
+                                    {% endif %}
+                                </div>
+                                <div class="label">Order Placed</div>
+                          </div>
+
+                            <!-- Step 2: In Transit -->
+                            <div class="step {% if status in 'In Transit,Out for Delivery,Delivered' %}active{% endif %} {% if status in 'Out for Delivery,Delivered' %}completed{% endif %} text-center">
+                                <div class="circle" title="In Transit">
+                                    {% if status in 'In Transit,Out for Delivery,Delivered' %}
+                                        <i class="fas fa-check"></i>
+                                    {% else %}
+                                        <i class="fas fa-truck-loading"></i>
+                                    {% endif %}
+                                </div>
+                                <div class="label">In Transit</div>
+                            </div>
+
+                            <!-- Step 3: Out for Delivery -->
+                            <div class="step {% if status == 'Out for Delivery' %}active{% endif %} {% if status == 'Delivered' %}completed{% endif %} text-center">
+                                <div class="circle" title="Out for Delivery">
+                                    {% if status in 'Out for Delivery,Delivered' %}
+                                        <i class="fas fa-check"></i>
+                                    {% else %}
+                                        <i class="fas fa-shipping-fast"></i>
+                                    {% endif %}
+                                </div>
+                                <div class="label">Out for Delivery</div>
+                              
+                            </div>
+
+                            <!-- Step 4: Delivered -->
+                            <div class="step {% if status == 'Delivered' %}active completed{% endif %} text-center">
+                                <div class="circle" title="Delivered">
+                                    {% if status == 'Delivered' %}
+                                        <i class="fas fa-check-circle"></i>
+                                    {% else %}
+                                        <i class="fas fa-home"></i>
+                                    {% endif %}
+                                </div>
+                                <div class="label">Delivered</div>
+                         
+                            </div>
+                        </div>
+                        {% endwith %}
+                    </div>
+
+                    <!-- Package Details -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card shadow-sm p-4 bg-white rounded-3">
+                            <h4 class="fw-bold mb-3 text-theme"><i class="fas fa-info-circle me-2"></i>Shipment Details</h4>
+                            <table class="table receipt-table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="text-muted">Tracking ID:</th>
+                                        <td>{{ courier.tracking_number|default:"N/A" }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-muted">Sender:</th>
+                                        <td>{{ courier.sender_name|default:"N/A" }}, {{ courier.sender_city|default:"N/A" }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-muted">Recipient:</th>
+                                        <td>{{ courier.receiver_name|default:"N/A" }}, {{ courier.receiver_city|default:"N/A" }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-muted">Status:</th>
+                                        <td>
+                                            <span class="badge px-3 py-2
+                                                {% if courier.status == 'Delivered' %}bg-success
+                                                {% elif courier.status == 'Out for Delivery' %}bg-warning text-dark
+                                                {% elif courier.status == 'In Transit' %}bg-info text-dark
+                                                {% else %}bg-secondary{% endif %}">
+                                                {{ courier.status|default:"Unknown" }}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-muted">Estimated Delivery:</th>
+                                        <td>{{ courier.estimated_delivery_date|date:"d M Y"|default:"N/A" }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-muted">Last Location:</th>
+                                        <td>
+                                            {% if courier.current_location_city and courier.current_location_country %}
+                                                {{ courier.current_location_city }}, {{ courier.current_location_country }}
+                                            {% else %}
+                                                N/A
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="col-lg-6 mb-4">
+                       <h4 class="fw-bold mb-3 text-theme"><i class="fas fa-map-marker-alt me-2"></i>Current Location</h4>
+{% if courier.current_location_city and courier.current_location_country %}
+<iframe
+    width="100%"
+    height="350"
+    style="border:0; border-radius:8px;"
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps?q={{ courier.current_location_city|urlencode }},{{ courier.current_location_country|urlencode }}&output=embed">
+</iframe>
+{% else %}
+<div class="alert alert-info" role="alert">Location not available</div>
+{% endif %}
+
+                    </div>
+
+                    {% if courier %}
+                    <!-- Modern Package Details Section -->
+                    <div class="col-lg-12 mt-5">
+                        <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                            <div class="row g-0">
+                                <!-- Package Image -->
+                                <div class="col-md-4 bg-light d-flex align-items-center justify-content-center p-3">
+                                    <img src="{% static 'assets/img/packages.jpg' %}" 
+                                         alt="Package Image" 
+                                         class="img-fluid rounded-3" 
+                                         style="max-height: 250px; object-fit: contain;">
+                                </div>
+
+                                <!-- Package Details -->
+                                <div class="col-md-8">
+                                    <div class="card-body p-4">
+                                        <h4 class="fw-bold mb-3 text-theme"><i class="fas fa-box me-2"></i>Package Information</h4>
+                                        <div class="row">
+                                            <div class="col-sm-6 mb-3">
+                                                <small class="text-muted">Tracking ID</small>
+                                                <p class="mb-0 fw-semibold">{{ courier.tracking_number|default:"N/A" }}</p>
+                                            </div>
+                                            <div class="col-sm-6 mb-3">
+                                                <small class="text-muted">Status</small>
+                                                <span class="badge px-3 py-2
+                                                    {% if courier.status == 'Delivered' %}bg-success
+                                                    {% elif courier.status == 'Out for Delivery' %}bg-warning text-dark
+                                                    {% elif courier.status == 'In Transit' %}bg-info text-dark
+                                                    {% else %}bg-secondary{% endif %}">
+                                                    {{ courier.status|default:"Unknown" }}
+                                                </span>
+                                            </div>
+                                            <div class="col-sm-6 mb-3">
+                                                <small class="text-muted">Item Description</small>
+                                                <p class="mb-0 fw-semibold">{{ courier.item_description|default:"N/A" }}</p>
+                                            </div>
+                                            <div class="col-sm-6 mb-3">
+                                                <small class="text-muted">Number of Items</small>
+                                                <p class="mb-0 fw-semibold">{{ courier.number_of_items|default:"N/A" }}</p>
+                                            </div>
+                                            <div class="col-sm-6 mb-3">
+                                                <small class="text-muted">Parcel Colour</small>
+                                                <p class="mb-0 fw-semibold">{{ courier.parcel_colour|default:"N/A" }}</p>
+                                            </div>
+                                            <div class="col-sm-6 mb-3">
+                                                <small class="text-muted">Weight</small>
+                                                <p class="mb-0 fw-semibold">{{ courier.weight|default:"N/A" }} kg</p>
+                                            </div>
+                                            <div class="col-sm-6 mb-3">
+                                                <small class="text-muted">Category</small>
+                                                <p class="mb-0 fw-semibold">{{ courier.category|default:"N/A" }}</p>
+                                            </div>
+                                            <div class="col-sm-6 mb-3">
+                                                <small class="text-muted">Estimated Delivery</small>
+                                                <p class="mb-0 fw-semibold">{{ courier.estimated_delivery_date|date:"d M Y"|default:"N/A" }}</p>
+                                            </div>
+                                        </div>
+  <!-- Print Button -->
+<div class="mt-4 d-flex gap-2">
+    <button class="btn btn-theme px-4 py-2 rounded-pill" onclick="printWaybill()">
+        <i class="fas fa-print me-2"></i> Print Receipt
+    </button>
+</div>
+
+<!-- Printable Receipt -->
+<div id="print-receipt" class="d-none">
+    <div style="width: 800px; margin: auto; padding: 30px; font-family: 'Arial', sans-serif; border: 1px solid #000; background-color: #fff;">
+        
+        <!-- Header -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <img src="{% static 'assets/img/logo_dark.png' %}" alt="Company Logo" style="height: 60px;">
+            <h2 style="color: #007bff; margin:0;">Waybill Receipt</h2>
+        </div>
+        <hr style="border: 2px solid #007bff; margin-bottom: 20px;">
+
+        <!-- Sender & Recipient Table -->
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+            <tr style="background: #007bff; color: #000000ff;">
+                <th style="padding: 10px; width: 50%;">Sender</th>
+                <th style="padding: 10px; width: 50%;">Recipient</th>
+            </tr>
+            <tr>
+                <td style="padding: 8px; vertical-align: top; border: 1px solid #000;">
+                    <strong>{{ courier.sender_name|default:"N/A" }}</strong><br>
+                    {{ courier.sender_address|default:"N/A" }}<br>
+                    {{ courier.sender_city|default:"N/A" }}, {{ courier.sender_country|default:"N/A" }}<br>
+                    Email: {{ courier.sender_email|default:"N/A" }}<br>
+                    Contact: {{ courier.sender_contact_number|default:"N/A" }}
+                </td>
+                <td style="padding: 8px; vertical-align: top; border: 1px solid #000;">
+                    <strong>{{ courier.receiver_name|default:"N/A" }}</strong><br>
+                    {{ courier.receiver_address|default:"N/A" }}<br>
+                    {{ courier.receiver_city|default:"N/A" }}, {{ courier.receiver_country|default:"N/A" }}<br>
+                    Email: {{ courier.receiver_email|default:"N/A" }}<br>
+                    Contact: {{ courier.receiver_contact_number|default:"N/A" }}
+                </td>
+            </tr>
+        </table>
+
+        <!-- Shipment Details -->
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+            <tr style="background: #f2f2f2;">
+                <th style="padding: 10px; text-align: left; width: 30%;">Tracking ID</th>
+                <td style="padding: 10px; border: 1px solid #000;">{{ courier.tracking_number|default:"N/A" }}</td>
+            </tr>
+            <tr>
+                <th style="padding: 10px; text-align: left;">Status</th>
+                <td style="padding: 10px; border: 1px solid #000;">{{ courier.status|default:"N/A" }}</td>
+            </tr>
+            <tr style="background: #f2f2f2;">
+                <th style="padding: 10px; text-align: left;">Trailer Number</th>
+                <td style="padding: 10px; border: 1px solid #000;">{{ courier.trailer_number|default:"N/A" }}</td>
+            </tr>
+            <tr>
+                <th style="padding: 10px; text-align: left;">Seal Number</th>
+                <td style="padding: 10px; border: 1px solid #000;">{{ courier.seal_number|default:"N/A" }}</td>
+            </tr>
+            <tr style="background: #f2f2f2;">
+                <th style="padding: 10px; text-align: left;">SCAC</th>
+                <td style="padding: 10px; border: 1px solid #000;">{{ courier.scac|default:"N/A" }}</td>
+            </tr>
+        </table>
+
+        <!-- Package Details Table (Black & White) -->
+        <h3 style="margin-bottom: 10px; text-align: left;">Package Details</h3>
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #000; margin-bottom: 20px;">
+            <tr style="background: #000; color: #000000ff;">
+                <th style="padding: 10px; border: 1px solid #000;">Item Description</th>
+                <th style="padding: 10px; border: 1px solid #000;">Number of Items</th>
+                <th style="padding: 10px; border: 1px solid #000;">Parcel Colour</th>
+                <th style="padding: 10px; border: 1px solid #000;">Weight (kg)</th>
+                <th style="padding: 10px; border: 1px solid #000;">Rate ($)</th>
+                <th style="padding: 10px; border: 1px solid #000;">Category</th>
+                <th style="padding: 10px; border: 1px solid #000;">Destination</th>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #000;">{{ courier.item_description|default:"N/A" }}</td>
+                <td style="padding: 8px; border: 1px solid #000;">{{ courier.number_of_items|default:"N/A" }}</td>
+                <td style="padding: 8px; border: 1px solid #000;">{{ courier.parcel_colour|default:"N/A" }}</td>
+                <td style="padding: 8px; border: 1px solid #000;">{{ courier.weight|default:"N/A" }}</td>
+                <td style="padding: 8px; border: 1px solid #000;">{{ courier.rate|default:"0.00" }}</td>
+                <td style="padding: 8px; border: 1px solid #000;">{{ courier.category|default:"N/A" }}</td>
+                <td style="padding: 8px; border: 1px solid #000;">
+                    {{ courier.destination_city|default:"N/A" }}, {{ courier.destination_country|default:"N/A" }}
+                </td>
+            </tr>
+        </table>
+
+        <!-- Timeline -->
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+            <tr style="background: #f2f2f2;">
+                <th style="padding: 10px; text-align: left; width: 30%;">Date Sent</th>
+                <td style="padding: 10px; border: 1px solid #000;">{{ courier.date_sent|date:"d M Y"|default:"N/A" }}</td>
+            </tr>
+            <tr>
+                <th style="padding: 10px; text-align: left;">Estimated Delivery</th>
+                <td style="padding: 10px; border: 1px solid #000;">{{ courier.estimated_delivery_date|date:"d M Y"|default:"N/A" }}</td>
+            </tr>
+        </table>
+
+        <!-- Barcode -->
+        <div style="text-align: center; margin-top: 20px;">
+            <svg id="barcode"></svg>
+        </div>
+
+        <!-- Signature Section -->
+        <table style="width: 100%; border-collapse: collapse; margin-top: 30px;">
+          <tr>
+            <td style="width: 50%; padding: 20px; border-top: 1px solid #000; text-align: center;">
+                <strong>Shipper Signature</strong><br>
+                <img src="{% static 'assets/img/shippment.png' %}" alt="Shipper Signature" style="width:200px; height:50px; object-fit:contain;">
+            </td>
+            <td style="width: 50%; padding: 20px; border-top: 1px solid #000; text-align: center;">
+                <strong>Carrier Signature</strong><br>
+                <img src="{% static 'assets/img/courier.png' %}" alt="Carrier Signature" style="width:200px; height:50px; object-fit:contain;">
+            </td>
+          </tr>
+        </table>
+
+        <p style="text-align: center; font-size: 12px; color: #000000ff; margin-top: 20px;">
+           Net Express Courier Service
+        </p>
+    </div>
+</div>
+
+                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Package Details Section -->
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Tracking Area -->
+<style>
+    .contact-area {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+    }
+
+    /* ===== Tracking Steps ===== */
+    .tracking-steps {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 20px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Progress Line */
+    .tracking-steps::before {
+        content: "";
+        position: absolute;
+        top: 35px;
+        left: 10%;
+        right: 10%;
+        height: 4px;
+        background: #e0e0e0;
+        z-index: 0;
+        border-radius: 2px;
+    }
+
+    .step {
+        flex: 1;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+    }
+
+    .step .circle {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 50%;
+        background: #ccc;
+        color: #fff;
+        margin: 0 auto 10px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .step.active .circle {
+        background: #007bff;
+    }
+
+    .step.completed .circle {
+        background: #28a745;
+    }
+
+    .step .label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    .step .step-date {
+        font-size: 12px;
+        color: #6c757d;
+    }
+
+    /* ===== Card Styles ===== */
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none !important;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    /* ===== Buttons ===== */
+    .btn-theme {
+        background-color: #007bff;
+        color: #fff;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-theme:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-outline-theme {
+        border-color: #007bff;
+        color: #007bff;
+        transition: all 0.3s ease;
+    }
+
+    .btn-outline-theme:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .text-theme {
+        color: #007bff;
+    }
+
+    /* ===== Receipt Table ===== */
+    .receipt-table th {
+        width: 30%;
+        font-weight: 500;
+        color: #6c757d;
+    }
+
+    .badge {
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 767px) {
+        .tracking-steps {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .tracking-steps::before {
+            display: none;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .step .circle {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+
+        .step .label {
+            font-size: 14px;
+        }
+
+        .step .step-date {
+            font-size: 12px;
+            margin-left: 5px;
+        }
+    }
+</style>
+
+
+
+  
+<!-- Start Footer 
+============================================= -->
+<footer class="bg-dark-secondary footer-style-two overflow-hidden text-light">
+    <div class="container">
+        <div class="f-items default-padding">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-style-two-items">
+                        
+                        <!-- About Section -->
+                        <div class="footer-item about">
+                            <div class="footer-logo">
+                                <img style="width:200px;" src="{% static 'assets/img/logo_light.png' %}" alt="Net Express Courier Logo">
+                            </div>
+                            <div class="f-item">
+                                <p>
+                                    Net Express Courier offers 24/7 customer support, fast delivery, and up to 70% savings on shipping costs with all major carriers.
+                                </p>
+                                <form class="newsletter-form-style-one" action="#">
+                                    <input type="email" placeholder="Your Email" class="form-control" name="email">
+                                    <button type="submit">
+                                        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                        </svg>
+                                    </button>  
+                                </form>
+                                <ul class="footer-social">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><img src="{% static 'assets/img/icon/twitter-x.png' %}" alt="X"></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div class="footer-item">
+                            <div class="f-item link">
+                                <h4 class="widget-title">Quick Links</h4>
+                                <ul>
+                                    <li><a href="about-us.html">Company Profile</a></li>
+                                    <li><a href="contact-us.html">Help Center</a></li>
+                                    <li><a href="about-us.html">Career</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Services -->
+                        <div class="footer-item">
+                            <div class="f-item link">
+                                <h4 class="widget-title">Our Services</h4>
+                                <ul>
+                                    <li><a href="#">Less Than Truckload</a></li>
+                                    <li><a href="#">Rail Freight Shipping</a></li>
+                                    <li><a href="#">Hot Shot Trucking</a></li>
+                                    <li><a href="#">Freight Forwarding</a></li>
+                                    <li><a href="#">Container Freight</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Contact -->
+                        <div class="footer-item">
+                            <div class="f-item contact">
+                                <h4 class="widget-title">Get in Touch</h4>
+                                <p>
+                                    123 Main Street, Suite 200<br> Anytown, State Name
+                                </p>
+                                <ul class="footer-address">
+                                    <li>
+                                        <a href="tel:+196428563364"><i class="fas fa-phone-alt"></i> +(964)-2856-3364</a>
+                                    </li>
+                             
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>© Copyright 2025. All Rights Reserved by <a href="#">Net Express Courier</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </div>
+</footer>
+<!-- End Footer -->
+
+    <!-- ✅ Scripts -->
+    <script src="{% static 'assets/js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.appear.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/progress-bar.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/count-to.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/YTPlayer.min.js' %}"></script>
+    <script src="{% static 'assets/js/validnavs.js' %}"></script>
+    <script src="{% static 'assets/js/gsap.js' %}"></script>
+    <script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'assets/js/SplitText.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    
+    <!-- JsBarcode & Signature Script -->
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+<script>
+function drawSignature(name) {
+    // Create a temporary canvas
+    const canvas = document.createElement('canvas');
+    canvas.width = 200;
+    canvas.height = 50;
+    const ctx = canvas.getContext("2d");
+    ctx.font = "italic 20px 'Cursive', Arial";
+    ctx.fillStyle = "#000";
+    ctx.fillText(name, 10, 30);
+    return canvas.toDataURL(); // returns base64 image
+}
+
+function printWaybill() {
+    // Generate barcode first
+    JsBarcode("#barcode", "{{ courier.tracking_number|default:'0000000000' }}", {
+        format: "CODE128",
+        lineColor: "#000",
+        width: 2,
+        height: 50,
+        displayValue: true
+    });
+
+    // Convert signatures to images
+    const shipperSign = drawSignature("{{ courier.sender_name|default:'Shipper' }}");
+    const carrierSign = drawSignature("{{ courier.receiver_name|default:'Carrier' }}");
+
+    // Get the receipt HTML
+    let content = document.getElementById('print-receipt').innerHTML;
+
+    // Replace canvas placeholders with images
+    content = content.replace('<canvas id="shipper-sign" width="200" height="50"></canvas>',
+                              `<img src="${shipperSign}" width="200" height="50"/>`);
+    content = content.replace('<canvas id="carrier-sign" width="200" height="50"></canvas>',
+                              `<img src="${carrierSign}" width="200" height="50"/>`);
+
+    // Open print window
+    const printWindow = window.open('', '', 'height=900,width=900');
+    printWindow.document.write('<html><head><title>Waybill Receipt</title></head><body>');
+    printWindow.document.write(content);
+    printWindow.document.write('</body></html>');
+    printWindow.document.close();
+    printWindow.focus();
+    printWindow.print();
+    printWindow.close();
+}
+
+</script>
+</body>
+</html>

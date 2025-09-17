@@ -1,0 +1,670 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!-- ✅ SEO Meta Tags -->
+    <meta name="description" content="Net Express Courier offers fast, reliable, and affordable delivery services. From local courier to international logistics, we ensure secure and on-time shipping solutions.">
+    <meta name="keywords" content="Net Express Courier, courier service, fast delivery, logistics, shipping, transportation, express delivery, Nigeria courier">
+    <meta name="author" content="Net Express Courier">
+
+    <!-- ✅ Open Graph (Facebook & Social Media) -->
+    <meta property="og:title" content="Net Express Courier - Fast & Reliable Delivery Services">
+    <meta property="og:description" content="Your trusted partner for fast, reliable, and affordable courier & logistics services.">
+    <meta property="og:image" content="{% static 'assets/img/logo_dark.png' %}">
+    <meta property="og:url" content="https://www.netexpress.com">
+    <meta property="og:type" content="website">
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Net Express Courier - Fast & Reliable Delivery Services">
+    <meta name="twitter:description" content="We provide courier & logistics services with speed, security, and reliability.">
+    <meta name="twitter:image" content="{% static 'assets/img/logo_dark.png' %}">
+
+    <!-- ========== Page Title ========== -->
+   <title>Net Express Courier - Fast & Reliable Delivery Services</title>
+
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}" type="image/x-icon">
+
+    
+    <!-- ✅ Schema.org Markup (Business Info for Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CourierService",
+      "name": "Net Express Courier",
+      "image": "https://www.netexpress.com/assets/img/logo_dark.png' %}",
+      "@id": "https://www.netexpress.com",
+      "url": "https://www.netexpress.com",
+      "telephone": "+234-800-123-4567",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Courier Street",
+        "addressLocality": "Lagos",
+        "addressRegion": "LA",
+        "postalCode": "100001",
+        "addressCountry": "NG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 6.5244,
+        "longitude": 3.3792
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "20:00"
+      }],
+      "sameAs": [
+        "https://facebook.com/netexpress",
+        "https://twitter.com/netexpress",
+        "https://instagram.com/netexpress"
+      ]
+    }
+    </script>
+
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/tranzi-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/validnavs.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/helper.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/unit-test.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <!-- ========== End Stylesheet ========== -->
+
+</head>
+
+<body>
+
+
+    <!-- Start Preloader 
+    ============================================= -->
+    <div id="preloader">
+        <div class="tranzi-loader-inner">
+           <div class="tranzi-loader">
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+           </div>
+        </div>
+     </div>
+    <!-- preloader end -->
+
+    <!-- Header 
+    ============================================= -->
+    <header>
+        <!-- Start Navigation -->
+        <nav class="navbar mobile-sidenav navbar-default validnavs navbar-sticky">
+
+            <!-- Start Top Search -->
+            <div class="top-search">
+                <div class="container-xl">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Search -->
+
+
+            <div class="container d-flex justify-content-between align-items-center">            
+
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="{% static 'assets/img/logo_dark.png' %}" class="logo" alt="Logo">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+
+                    <img src="{% static 'assets/img/logo_dark.png' %}" alt="Logo">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    
+                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li>
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                    
+                        <li>
+                            <a class="smooth-menu" href="{% url 'about_us' %}">About</a>
+                        </li>
+
+                        <li>
+                            <a class="smooth-menu" href="{% url 'services' %}">Services</a>
+                        </li>
+
+                        <li>
+                            <a class="smooth-menu" href="{% url 'home' %}#projects">Projects</a>
+                        </li>
+                        <li>
+                            <a class="smooth-menu" href="{% url 'contact' %}">Contact Us</a>
+                        </li>
+              
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+
+                <div class="attr-right">
+                    <!-- Start Atribute Navigation -->
+                    <div class="attr-nav">
+                        <ul>
+                            <li class="contact">
+                                <div class="call">
+                                    <div class="icon">
+                                        <i class="fas fa-comments-alt-dollar"></i>
+                                    </div>
+                                    <div class="info">
+                                        <p>Have any Questions?</p>
+                                        <h5><a href="mailto:info@NetExpress.com">info@NetExpress.com</a></h5>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End Atribute Navigation -->
+                </div>
+
+
+            </div>   
+            <!-- Overlay screen for menu -->
+            <div class="overlay-screen"></div>
+            <!-- End Overlay screen for menu -->
+
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area with-banner bg-cover text-center bg-dark text-light" style="background-image: url({% static 'assets/img/banner/15.jpg' %});">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1>About Us</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                            <li class="active">About</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+
+     <!-- Start About 
+============================================= -->
+<div id="about" class="about-style-two-area default-padding bg-gray">
+    <div class="container">
+        <div class="row">
+            <!-- About Info -->
+            <div class="col-lg-7 pr-60 pr-md-15 pr-xs-15">
+                <div class="about-style-two-info">
+                    <h4 class="sub-title">About Us</h4>
+                    <h2 class="title split-text">Delivering Reliable Courier & Logistics Solutions Worldwide</h2>
+                    <div class="d-flex mt-40">
+                        <div class="experience-style-one">
+                            <div class="fun-fact">
+                                <div class="counter">
+                                    <div class="timer" data-to="10" data-speed="1000">10</div>
+                                    <div class="operator">+</div>
+                                </div>
+                                <h5>Years of Experience</h5>
+                            </div>
+                        </div>
+                        <p class="wow fadeInUp">
+                            At <strong>Net Express Courier</strong>, we go beyond delivery—we build smart logistics solutions that connect businesses and customers worldwide. With a strong focus on speed, reliability, and affordability, we make supply chains seamless and help businesses grow with confidence.
+                        </p>
+                    </div>
+                    <div class="fun-fact-style-two-box">
+                        <div class="item">
+                            <h4>Trusted Clients & Partners</h4>
+                            <h2>5K+</h2>
+                        </div>
+                        <div class="item">
+                            <h4>Parcels Delivered</h4>
+                            <h2>2M+</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- About Image -->
+            <div class="col-lg-5">
+                <div class="about-style-two-thumb wow fadeInUp">
+                    <img src="{% static 'assets/img/about/3.jpg' %}" alt="About Net Express Courier - Logistics & Delivery Services">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End About -->
+    
+     <!-- Start Brand Area 
+    ============================================= -->
+    <div class="brand-area relative overflow-hidden bg-dark text-light">
+        <div class="brand-style-one">
+            <div class="brand-items">
+                <div class="brand-conetnt">
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/1.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Cargo</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/2.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Transport</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/3.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Logistics</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/4.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Warehouse</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/2.png' %}" alt="Image Not Found">
+                    </div>
+                </div>
+                <div class="brand-conetnt">
+                    <div class="item">
+                        <h2>Cargo</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/1.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Transport</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/2.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Logistics</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/3.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Warehouse</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/4.png' %}" alt="Image Not Found">
+                    </div>
+                </div>
+                <div class="brand-conetnt">
+                    <div class="item">
+                        <h2>Cargo</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/1.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Transport</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/2.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Logistics</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/3.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Warehouse</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/4.png' %}" alt="Image Not Found">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Bradn Area -->
+
+   
+    <!-- Start Process 
+============================================= -->
+<div class="process-style-one-area default-padding text-center bg-gray" style="background: url(assets/img/shape/globe.svg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="site-heading text-center">
+                    <h4 class="sub-title">Our Process</h4>
+                    <h2 class="title split-text">How Net Express Courier Works</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- Single Item -->
+            <div class="col-lg-4 col-md-6 process-style-one">
+                <div class="process-style-one-item wow fadeInUp">
+                    <div class="thumb">
+                        <img src="{% static 'assets/img/process/1.png' %}" alt="Image Not Found">
+                        <img src="{% static 'assets/img/shape/direction-arrow.svg' %}" alt="Image Not Found">
+                        <span>1</span>
+                    </div>
+                    <div class="info">
+                        <h4>Book Your Delivery</h4>
+                        <p>
+                            Simply request a quote or place your order online. Our system makes it quick and easy to schedule your courier service.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Item -->
+
+            <!-- Single Item -->
+            <div class="col-lg-4 col-md-6 process-style-one">
+                <div class="process-style-one-item wow fadeInUp" data-wow-delay="150ms">
+                    <div class="thumb">
+                        <img src="{% static 'assets/img/process/2.png' %}" alt="Image Not Found">
+                        <img src="{% static 'assets/img/shape/direction-arrow.svg' %}" alt="Image Not Found">
+                        <span>2</span>
+                    </div>
+                    <div class="info">
+                        <h4>We Pick Up</h4>
+                        <p>
+                            Our professional team picks up your parcel securely from your doorstep or preferred location at the scheduled time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Item -->
+
+            <!-- Single Item -->
+            <div class="col-lg-4 col-md-6 process-style-one">
+                <div class="process-style-one-item wow fadeInUp" data-wow-delay="300ms">
+                    <div class="thumb">
+                        <img src="{% static 'assets/img/process/3.png' %}" alt="Image Not Found">
+                        <img src="{% static 'assets/img/shape/direction-arrow.svg' %}" alt="Image Not Found">
+                        <span>3</span>
+                    </div>
+                    <div class="info">
+                        <h4>Fast Delivery</h4>
+                        <p>
+                            We transport your package quickly and safely, ensuring on-time delivery with live tracking updates until it reaches its destination.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Item -->
+        </div>
+    </div>
+</div>
+<!-- End Process -->
+
+
+<!-- Start Team 
+============================================= -->
+<div class="team-style-one-area default-padding-top bottom-less bg-gray text-center half-shape-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="site-heading text-center">
+                    <h4 class="sub-title">Our Team</h4>
+                    <h2 class="title split-text">Meet the Net Express Experts</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- Single Item -->
+            <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
+                <div class="team-style-one-item wow fadeInUp">
+                    <div class="thumb">
+                        <img src="{% static 'assets/img/team/1.jpg' %}" alt="Image Not Found">
+                    </div>
+                    <div class="info">
+                        <span>Chief Executive Officer</span>
+                        <div class="overlay">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                       <h4><a href="team-details.html">Michael Carter</a></h4>
+
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Item -->
+
+            <!-- Single Item -->
+            <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
+                <div class="team-style-one-item wow fadeInUp" data-wow-delay="150ms">
+                    <div class="thumb">
+                        <img src="{% static 'assets/img/team/2.jpg' %}" alt="Image Not Found">
+                    </div>
+                    <div class="info">
+                        <span>Operations Manager</span>
+                        <div class="overlay">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                        <h4><a href="team-details.html">Kevin Martin</a></h4>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Item -->
+
+            <!-- Single Item -->
+            <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
+                <div class="team-style-one-item wow fadeInUp" data-wow-delay="300ms">
+                    <div class="thumb">
+                        <img src="{% static 'assets/img/team/3.jpg' %}" alt="Image Not Found">
+                    </div>
+                    <div class="info">
+                        <span>Customer Relations Lead</span>
+                        <div class="overlay">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                        <h4><a href="team-details.html">Sarah Albert</a></h4>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Item -->
+
+            <!-- Single Item -->
+            <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
+                <div class="team-style-one-item wow fadeInUp" data-wow-delay="450ms">
+                    <div class="thumb">
+                        <img src="{% static 'assets/img/team/4.jpg' %}" alt="Image Not Found">
+                    </div>
+                    <div class="info">
+                        <span>Lead Courier Driver</span>
+                        <div class="overlay">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                        <h4><a href="team-details.html">Amanulla Joey</a></h4>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Item -->
+        </div>
+    </div>
+</div>
+<!-- End Team -->
+
+
+  
+<!-- Start Footer 
+============================================= -->
+<footer class="bg-dark-secondary footer-style-two overflow-hidden text-light">
+    <div class="container">
+        <div class="f-items default-padding">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-style-two-items">
+                        
+                        <!-- About Section -->
+                        <div class="footer-item about">
+                            <div class="footer-logo">
+                                <img src="{% static 'assets/img/logo_light.png' %}" alt="Net Express Courier Logo">
+                            </div>
+                            <div class="f-item">
+                                <p>
+                                    Net Express Courier offers 24/7 customer support, fast delivery, and up to 70% savings on shipping costs with all major carriers.
+                                </p>
+                                <form class="newsletter-form-style-one" action="#">
+                                    <input type="email" placeholder="Your Email" class="form-control" name="email">
+                                    <button type="submit">
+                                        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                        </svg>
+                                    </button>  
+                                </form>
+                                <ul class="footer-social">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><img src="{% static 'assets/img/icon/twitter-x.png' %}" alt="X"></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div class="footer-item">
+                            <div class="f-item link">
+                                <h4 class="widget-title">Quick Links</h4>
+                                <ul>
+                                    <li><a href="about-us.html">Company Profile</a></li>
+                                    <li><a href="contact-us.html">Help Center</a></li>
+                                    <li><a href="about-us.html">Career</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Services -->
+                        <div class="footer-item">
+                            <div class="f-item link">
+                                <h4 class="widget-title">Our Services</h4>
+                                <ul>
+                                    <li><a href="#">Less Than Truckload</a></li>
+                                    <li><a href="#">Rail Freight Shipping</a></li>
+                                    <li><a href="#">Hot Shot Trucking</a></li>
+                                    <li><a href="#">Freight Forwarding</a></li>
+                                    <li><a href="#">Container Freight</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Contact -->
+                        <div class="footer-item">
+                            <div class="f-item contact">
+                                <h4 class="widget-title">Get in Touch</h4>
+                                <p>
+                                    123 Main Street, Suite 200<br> Anytown, State Name
+                                </p>
+                                <ul class="footer-address">
+                                    <li>
+                                        <a href="tel:+196428563364"><i class="fas fa-phone-alt"></i> +(964)-2856-3364</a>
+                                    </li>
+                             
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>© Copyright 2025. All Rights Reserved by <a href="#">Net Express Courier</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </div>
+</footer>
+<!-- End Footer -->
+    
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="{% static 'assets/js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.appear.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/progress-bar.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/count-to.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/YTPlayer.min.js' %}"></script>
+    <script src="{% static 'assets/js/validnavs.js' %}"></script>
+    <script src="{% static 'assets/js/gsap.js' %}"></script>
+    <script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'assets/js/SplitText.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+</html>

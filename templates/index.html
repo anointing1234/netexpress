@@ -1,0 +1,1312 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!-- ✅ SEO Meta Tags -->
+    <meta name="description" content="Net Express Courier offers fast, reliable, and affordable delivery services. From local courier to international logistics, we ensure secure and on-time shipping solutions.">
+    <meta name="keywords" content="Net Express Courier, courier service, fast delivery, logistics, shipping, transportation, express delivery, Nigeria courier">
+    <meta name="author" content="Net Express Courier">
+
+    <!-- ✅ Open Graph (Facebook & Social Media) -->
+    <meta property="og:title" content="Net Express Courier - Fast & Reliable Delivery Services">
+    <meta property="og:description" content="Your trusted partner for fast, reliable, and affordable courier & logistics services.">
+    <meta property="og:image" content="{% static 'assets/img/logo_dark.png' %}">
+    <meta property="og:url" content="https://www.netexpress.com">
+    <meta property="og:type" content="website">
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Net Express Courier - Fast & Reliable Delivery Services">
+    <meta name="twitter:description" content="We provide courier & logistics services with speed, security, and reliability.">
+    <meta name="twitter:image" content="{% static 'assets/img/logo_dark.png' %}">
+
+    <!-- ========== Page Title ========== -->
+   <title>Net Express Courier - Fast & Reliable Delivery Services</title>
+
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}" type="image/x-icon">
+
+    
+    <!-- ✅ Schema.org Markup (Business Info for Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CourierService",
+      "name": "Net Express Courier",
+      "image": "https://www.netexpress.com/assets/img/logo_dark.png' %}",
+      "@id": "https://www.netexpress.com",
+      "url": "https://www.netexpress.com",
+      "telephone": "+234-800-123-4567",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Courier Street",
+        "addressLocality": "Lagos",
+        "addressRegion": "LA",
+        "postalCode": "100001",
+        "addressCountry": "NG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 6.5244,
+        "longitude": 3.3792
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "20:00"
+      }],
+      "sameAs": [
+        "https://facebook.com/netexpress",
+        "https://twitter.com/netexpress",
+        "https://instagram.com/netexpress"
+      ]
+    }
+    </script>
+
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/tranzi-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/validnavs.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/helper.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/unit-test.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <!-- ========== End Stylesheet ========== -->
+
+</head>
+
+<body>
+
+
+    <!-- Start Preloader 
+    ============================================= -->
+    <div id="preloader">
+        <div class="tranzi-loader-inner">
+           <div class="tranzi-loader">
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+              <span class="tranzi-loader-item"></span>
+           </div>
+        </div>
+     </div>
+    <!-- preloader end -->
+
+    <!-- Header 
+    ============================================= -->
+    <header>
+        <!-- Start Navigation -->
+        <nav class="navbar mobile-sidenav navbar-default validnavs navbar-sticky">
+
+            <!-- Start Top Search -->
+            <div class="top-search">
+                <div class="container-xl">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Search -->
+
+
+            <div class="container d-flex justify-content-between align-items-center">            
+
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="{% static 'assets/img/logo_dark.png' %}" class="logo" alt="Logo">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+
+                    <img src="{% static 'assets/img/logo_dark.png' %}" alt="Logo">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li>
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                    
+                        <li>
+                            <a class="smooth-menu" href="{% url 'about_us' %}">About</a>
+                        </li>
+
+                        <li>
+                            <a class="smooth-menu" href="{% url 'services' %}">Services</a>
+                        </li>
+
+                        <li>
+                            <a class="smooth-menu" href="{% url 'home' %}#projects">Projects</a>
+                        </li>
+                        <li>
+                            <a class="smooth-menu" href="{% url 'contact' %}">Contact Us</a>
+                        </li>
+              
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+
+                <div class="attr-right">
+                    <!-- Start Atribute Navigation -->
+                    <div class="attr-nav">
+                        <ul>
+                            <li class="contact">
+                                <div class="call">
+                                    <div class="icon">
+                                        <i class="fas fa-comments-alt-dollar"></i>
+                                    </div>
+                                    <div class="info">
+                                        <p>Have any Questions?</p>
+                                        <h5><a href="mailto:info@NetExpress.com">info@NetExpress.com</a></h5>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End Atribute Navigation -->
+                </div>
+
+
+            </div>   
+            <!-- Overlay screen for menu -->
+            <div class="overlay-screen"></div>
+            <!-- End Overlay screen for menu -->
+
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Header -->
+
+
+    <!-- Start Banner Area 
+    ============================================= -->
+    <div class="banner-area zoom-effect banner-style-two auto-height overflow-hidden text-light">
+
+
+       <!-- Slider main container -->
+<div class="banner-fade">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+
+        <!-- Single Item -->
+        <div class="swiper-slide">
+            <div class="banner-thumb shadow-dark-left bg-cover" style="background: url({% static 'assets/img/banner/3.jpg' %});"></div>
+            <div class="item">
+                <div class="shape-style-one">
+                    <img src="{% static 'assets/img/shape/airplane.svg' %}"alt="Image Not Found">
+                </div>
+                <div class="container">
+                    <div class="content">
+                        <div class="row align-items-center">
+                            <div class="col-xl-7 col-lg-10">
+                                <h4>Net Express Courier</h4>
+                                <h2>Reliable Delivery, Anytime, Anywhere</h2>
+                                <p>
+                                    At Net Express Courier, we specialize in fast, secure, and affordable courier services, ensuring your packages reach their destination on time and in perfect condition.
+                                </p>
+                                <div class="button mt-40">
+                                    <a class="btn-style-one theme" href="about-us-2.html">
+                                        <div class="icon">
+                                            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                            </svg>
+                                        </div>
+                                        <span>Learn More</span> 
+                                        <div class="icon">
+                                            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Single Item -->
+
+        <!-- Single Item -->
+        <div class="swiper-slide">
+            <div class="banner-thumb shadow-dark-left bg-cover" style="background: url({% static 'assets/img/banner/4.jpg' %});"></div>
+            <div class="item">
+                <div class="shape-style-one">
+                    <img src="{% static 'assets/img/shape/airplane.svg' %}"alt="Image Not Found">
+                </div>
+                <div class="container">
+                    <div class="content">
+                        <div class="row align-items-center">
+                            <div class="col-xl-7 col-lg-10">
+                                <h4>Express & Worldwide Service</h4>
+                                <h2>Fast & Secure Courier Solutions</h2>
+                                <p>
+                                    Whether local or international, Net Express Courier delivers with speed, precision, and care — giving you peace of mind for every shipment.
+                                </p>
+                                <div class="button mt-40">
+                                    <a class="btn-style-one theme" href="about-us-2.html">
+                                        <div class="icon">
+                                            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                            </svg>
+                                        </div>
+                                        <span>Learn More</span> 
+                                        <div class="icon">
+                                            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Single Item -->
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="banner-one-nav-prev style-two">
+        <svg width="27" height="10" viewBox="0 0 27 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M27 9H3L9.9 1" stroke="#ffffff" stroke-width="2"/>
+        </svg>
+    </div>
+    <div class="banner-one-nav-next style-two">
+        <svg width="27" height="10" viewBox="0 0 27 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 9H24L17.1 1" stroke="#ffffff" stroke-width="2"/>
+        </svg>
+    </div>
+</div>
+
+      <!-- Banner Fixed Info -->
+<div class="banner-two-fixed-forms">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-8">
+                <div class="form-style-one">
+                    <div class="form-items">
+                        <h3>Track Your Shipment</h3>
+                        <!-- Track Shipment Form -->
+                        <form id="trackingForm" action="{% url 'tracking' %}" method="get">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input class="form-control" id="tracking_number" name="tracking_number" placeholder="Enter Tracking Number" type="text" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <button type="submit" name="trackBtn" id="trackBtn">
+                                        Track Now
+                                        <svg width="27" height="10" viewBox="0 0 27 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 9H24L17.1 1" stroke="#104B59" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Banner Fixed Info -->
+
+    </div>
+    <!-- End Banner -->
+
+    <!-- Start Feature 
+    ============================================= -->
+<div class="feature-style-one-area bg-dark text-light">
+    <div class="feature-thumb">
+        <img class="leftRightScroll" src="{% static 'assets/img/illustration/2.png' %}" alt="Image Not Found">
+    </div>
+    <div class="feature-style-item-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="feature-style-one-left"></div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="feature-style-one-items">
+                        <!-- Single Item -->
+                        <div class="feature-style-one-item hover-active-item">
+                            <div class="icon">
+                                <img src="{% static 'assets/img/icon/globe-logistics.svg' %}"alt="Image Not Found">
+                            </div>
+                            <h4>Nationwide & International Shipping</h4>
+                            <p>
+                                We deliver packages across Nigeria and worldwide with speed, accuracy, and care—ensuring your items arrive on time, every time.
+                            </p>
+                            <img src="{% static 'assets/img/shape/truck-left.png' %}" alt="Image Not Found">
+                        </div>
+                        <!-- End Single Item -->
+
+                        <!-- Single Item -->
+                        <div class="feature-style-one-item hover-active-item active">
+                            <div class="icon">
+                                <img src="{% static 'assets/img/icon/delivary-truck.svg' %}"alt="Image Not Found">
+                            </div>
+                            <h4>Express Delivery</h4>
+                            <p>
+                                From same-day delivery to scheduled shipments, Net Express Courier guarantees fast and reliable service tailored to your needs.
+                            </p>
+                            <img src="{% static 'assets/img/shape/truck-left.png' %}" alt="Image Not Found">
+                        </div>
+                        <!-- End Single Item -->
+
+                        <!-- Single Item -->
+                        <div class="feature-style-one-item hover-active-item">
+                            <div class="icon">
+                                <img src="{% static 'assets/img/icon/support.svg' %}"alt="Image Not Found">
+                            </div>
+                            <h4>24/7 Customer Support</h4>
+                            <p>
+                                Our dedicated support team is available round the clock to assist you with tracking, inquiries, and customized delivery solutions.
+                            </p>
+                            <img src="{% static 'assets/img/shape/truck-left.png' %}" alt="Image Not Found">
+                        </div>
+                        <!-- End Single Item -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Feature -->
+
+   <!-- Start Services 
+============================================= -->
+<div id="services" class="services-style-two-area overflow-hidden">
+    <div class="heading-style-two">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 offset-lg-1 order-lg-last">
+                    <div class="right-info">
+                        <h4 class="sub-title">Our Services</h4>
+                        <h2 class="title split-text">Comprehensive <br> Courier & Logistics Solutions</h2>
+                        <p class="wow fadeInUp">
+                            At <strong>Net Express Courier</strong>, we provide fast, secure, and cost-effective logistics services. 
+                            From local delivery to international freight, our tailored solutions ensure your goods arrive 
+                            safely and on time—every time.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="left-info text-center">
+                        <a href="services-2.html" class="circle-button-two">
+                            <svg viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 17L17 1H7.8" stroke="#232323" stroke-width="2"></path>
+                            </svg>
+                            <span>View All Services</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="service-style-two-items default-padding wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <!-- Service Image Preview -->
+                <div class="col-lg-5">
+                    <div class="service-tab-content-box">
+                        <div class="service-tab-contents active">
+                            <img src="{% static 'assets/img/services/1.png' %}" alt="Land Freight - Net Express Courier">
+                        </div>
+                        <div class="service-tab-contents">
+                            <img src="{% static 'assets/img/services/2.png' %}" alt="Air Freight - Net Express Courier">
+                        </div>
+                        <div class="service-tab-contents">
+                            <img src="{% static 'assets/img/services/3.png' %}" alt="Ocean Freight - Net Express Courier">
+                        </div>
+                        <div class="service-tab-contents">
+                            <img src="{% static 'assets/img/services/4.png' %}" alt="Warehousing & Distribution - Net Express Courier">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services List -->
+                <div class="col-lg-7 pl-70 pl-md-15 pl-xs-15">
+                    <ul class="service-tab-content-list">
+                        <li class="active">
+                            <div class="service-tab-item">
+                                <h4><a href="#">Land Freight Transportation</a></h4>
+                                <p>
+                                    Reliable road transport solutions for domestic and cross-border deliveries. 
+                                    We ensure safe, fast, and affordable movement of goods.
+                                </p>
+                                <a href="#" class="round-btn">
+                                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="service-tab-item">
+                                <h4><a href="#">Air Freight Transportation</a></h4>
+                                <p>
+                                    Express air cargo services designed for speed and security. 
+                                    Perfect for time-sensitive shipments across the globe.
+                                </p>
+                                <a href="#" class="round-btn">
+                                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="service-tab-item">
+                                <h4><a href="#">Ocean Freight Transportation</a></h4>
+                                <p>
+                                    Cost-effective international shipping via sea. 
+                                    We handle full-container (FCL) and less-than-container (LCL) loads efficiently.
+                                </p>
+                                <a href="#" class="round-btn">
+                                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="service-tab-item">
+                                <h4><a href="#">Warehousing & Distribution</a></h4>
+                                <p>
+                                    Secure storage and efficient distribution services. 
+                                    Our smart inventory management ensures timely delivery to your customers.
+                                </p>
+                                <a href="#" class="round-btn">
+                                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Services -->
+
+   <!-- Start About 
+============================================= -->
+<div id="about" class="about-style-two-area default-padding bg-gray">
+    <div class="container">
+        <div class="row">
+            <!-- About Info -->
+            <div class="col-lg-7 pr-60 pr-md-15 pr-xs-15">
+                <div class="about-style-two-info">
+                    <h4 class="sub-title">About Us</h4>
+                    <h2 class="title split-text">Delivering Reliable Courier & Logistics Solutions Worldwide</h2>
+                    <div class="d-flex mt-40">
+                        <div class="experience-style-one">
+                            <div class="fun-fact">
+                                <div class="counter">
+                                    <div class="timer" data-to="10" data-speed="1000">10</div>
+                                    <div class="operator">+</div>
+                                </div>
+                                <h5>Years of Experience</h5>
+                            </div>
+                        </div>
+                        <p class="wow fadeInUp">
+                            At <strong>Net Express Courier</strong>, we go beyond delivery—we build smart logistics solutions that connect businesses and customers worldwide. With a strong focus on speed, reliability, and affordability, we make supply chains seamless and help businesses grow with confidence.
+                        </p>
+                    </div>
+                    <div class="fun-fact-style-two-box">
+                        <div class="item">
+                            <h4>Trusted Clients & Partners</h4>
+                            <h2>5K+</h2>
+                        </div>
+                        <div class="item">
+                            <h4>Parcels Delivered</h4>
+                            <h2>2M+</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- About Image -->
+            <div class="col-lg-5">
+                <div class="about-style-two-thumb wow fadeInUp">
+                    <img src="{% static 'assets/img/about/3.jpg' %}"alt="About Net Express Courier - Logistics & Delivery Services">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End About -->
+
+     <!-- Start Brand Area 
+    ============================================= -->
+    <div class="brand-area relative overflow-hidden bg-theme text-light">
+        <div class="brand-style-one">
+            <div class="brand-items">
+                <div class="brand-conetnt">
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/1.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Cargo</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/2.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Transport</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/3.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Logistics</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/4.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Warehouse</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/2.png' %}" alt="Image Not Found">
+                    </div>
+                </div>
+                <div class="brand-conetnt">
+                    <div class="item">
+                        <h2>Cargo</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/1.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Transport</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/2.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Logistics</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/3.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Warehouse</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/4.png' %}" alt="Image Not Found">
+                    </div>
+                </div>
+                <div class="brand-conetnt">
+                    <div class="item">
+                        <h2>Cargo</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/1.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Transport</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/2.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Logistics</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/3.png' %}" alt="Image Not Found">
+                    </div>
+                    <div class="item">
+                        <h2>Warehouse</h2>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'assets/img/icon/4.png' %}" alt="Image Not Found">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Bradn Area -->
+
+    <!-- Start Why Choose Us 
+    ============================================= -->
+<div class="choose-us-style-onea-area default-padding bg-dark text-light overflow-hidden">
+    <div class="truck-left">
+        <img class="rightLeftScroll" src="{% static 'assets/img/illustration/3.png' %}" alt="Delivery Truck Illustration">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 offset-lg-2">
+                <div class="heading-left">
+                    <h4 class="sub-title">Why Choose Us</h4>
+                    <h2 class="title split-text">Reliable, Fast & Affordable Courier Solutions</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="choos-us-style-one-items mt-120 mt-md-0 mt-xs-0">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="thumb-style-one wow fadeInUp">
+                        <img src="{% static 'assets/img/thumb/1.jpg' %}"alt="Net Express Courier Service">
+                        
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="choose-us-style-one-info">
+                        <div class="tab-style-two-items">
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button class="nav-link active" id="tab_1" data-bs-toggle="tab" data-bs-target="#tabs_1" type="button" role="tab" aria-controls="tabs_1" aria-selected="true">
+                                        What We Do
+                                    </button>
+                                    <button class="nav-link" id="tab_2" data-bs-toggle="tab" data-bs-target="#tabs_2" type="button" role="tab" aria-controls="tabs_2" aria-selected="false">
+                                        Our Achievements
+                                    </button>
+                                    <button class="nav-link" id="tab_3" data-bs-toggle="tab" data-bs-target="#tabs_3" type="button" role="tab" aria-controls="tabs_3" aria-selected="false">
+                                        Our Journey
+                                    </button>
+                                </div>
+                            </nav>
+
+                            <div class="tab-content" id="nav-tabContent">
+                                <!-- Tab 1: What We Do -->
+                                <div class="tab-pane fade show active" id="tabs_1" role="tabpanel" aria-labelledby="tab_1">
+                                    <p>
+                                        At <strong>Net Express Courier</strong>, we specialize in delivering parcels, cargo, and freight solutions with speed, security, and precision. Whether it's same-day delivery, international shipping, or warehouse logistics, we ensure your goods arrive on time and in perfect condition.
+                                    </p>
+                                    <ul class="list-style-one">
+                                        <li>Express & Same-Day Delivery</li>
+                                        <li>International Shipping</li>
+                                        <li>Secure Warehousing</li>
+                                        <li>Air & Sea Freight</li>
+                                        <li>Affordable Rates</li>
+                                        <li>Professional Support Team</li>
+                                    </ul>
+                                    <div class="button mt-40">
+                                        <a class="btn-style-one theme" href="about-us-2.html">
+                                            <div class="icon">
+                                                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Learn More</span> 
+                                            <div class="icon">
+                                                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                                </svg>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Tab 2: Our Achievements -->
+                                <div class="tab-pane fade" id="tabs_2" role="tabpanel" aria-labelledby="tab_2">
+                                    <p>
+                                        Over the years, <strong>Net Express Courier</strong> has built a reputation for excellence, reliability, and innovation in the courier and logistics industry. We are proud to have served thousands of businesses and individuals across the globe.
+                                    </p>
+                                    <ul class="list-style-one">
+                                        <li>100,000+ Successful Deliveries</li>
+                                        <li>Recognized in Logistics Excellence</li>
+                                        <li>Trusted by Leading E-commerce Brands</li>
+                                        <li>International Courier Partnerships</li>
+                                        <li>Award-Winning Customer Service</li>
+                                    </ul>
+                                    <div class="button mt-40">
+                                        <a class="btn-style-one theme" href="about-us-2.html">
+                                            <div class="icon">
+                                                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Learn More</span> 
+                                            <div class="icon">
+                                                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                                </svg>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Tab 3: Our Journey -->
+                                <div class="tab-pane fade" id="tabs_3" role="tabpanel" aria-labelledby="tab_3">
+                                    <p>
+                                        From humble beginnings to becoming a trusted global courier brand, <strong>Net Express Courier</strong> has always focused on one thing: delivering peace of mind. Our journey is marked by innovation, customer satisfaction, and continuous growth.
+                                    </p>
+                                    <ul class="list-style-one">
+                                        <li>Founded with a Vision of Fast Delivery</li>
+                                        <li>Expanded to International Markets</li>
+                                        <li>Built Strong Industry Partnerships</li>
+                                        <li>Invested in Technology & Tracking</li>
+                                        <li>Grew into a Leading Courier Brand</li>
+                                    </ul>
+                                    <div class="button mt-40">
+                                        <a class="btn-style-one theme" href="about-us-2.html">
+                                            <div class="icon">
+                                                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Learn More</span> 
+                                            <div class="icon">
+                                                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                                </svg>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div> <!-- End Tab Content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Why Choose Us  -->
+
+<!-- Start Project 
+============================================= -->
+<div id="projects" class="project-style-two-area default-padding">
+    <div class="container">
+        <div class="heading-left">
+            <div class="row align-center">
+                <div class="col-xl-6">
+                    <h4 class="sub-title">Our Services</h4>
+                    <h2 class="title split-text">Deliveries and logistics handled by Net Express Courier</h2>
+                </div>
+                <div class="col-xl-5 offset-xl-1">
+                    <div class="contact-card-style-one wow fadeInUp" data-wow-delay="200ms">
+                        <div class="info">
+                            <img src="{% static 'assets/img/team/1.jpg' %}"alt="Image Not Found">
+                            <div class="content">
+                                <h4>Do you have a delivery to arrange?</h4>
+                                <a href="contact-us.html">Let’s Chat</a>
+                            </div>
+                        </div>
+                        <a href="contact-us.html"><i class="icon-comments-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-full no-gap">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="project-style-two-items text-light wow fadeInUp">
+                    <div class="project-center-stage-carousel swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Single Item -->
+                            <div class="swiper-slide">
+                                <div class="project-style-two">
+                                    <div class="thumb">
+                                        <img src="{% static 'assets/img/portfolio/4.jpg' %}"alt="Image Not Found">
+                                        <div class="content">
+                                            <span>Air Freight</span>
+                                            <h4><a href="gallery-details.html">Express cargo delivery from Canada to USA</a></h4>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Item -->
+
+                            <!-- Single Item -->
+                            <div class="swiper-slide">
+                                <div class="project-style-two">
+                                    <div class="thumb">
+                                        <img src="{% static 'assets/img/portfolio/5.jpg' %}"alt="Image Not Found">
+                                        <div class="content">
+                                            <span>Road Transport</span>
+                                            <h4><a href="gallery-details.html">Safe land delivery across North America</a></h4>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Item -->
+
+                            <!-- Single Item -->
+                            <div class="swiper-slide">
+                                <div class="project-style-two">
+                                    <div class="thumb">
+                                        <img src="{% static 'assets/img/portfolio/6.jpg' %}"alt="Image Not Found">
+                                        <div class="content">
+                                            <span>Warehousing</span>
+                                            <h4><a href="gallery-details.html">Business asset storage and distribution</a></h4>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="project-style-two-navs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="project-center-two-navbs">
+                        <div class="project-center-button-prev">
+                            <svg width="27" height="10" viewBox="0 0 27 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M27 9H3L9.9 1" stroke="#ffffff" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <div class="project-center-button-next">
+                            <svg width="27" height="10" viewBox="0 0 27 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 9H24L17.1 1" stroke="#ffffff" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Project  -->
+
+
+<!-- Start Testimonial 
+============================================= -->
+<div class="testimonial-style-two-area default-padding-bottom">
+    <div class="container">
+        <div class="testimonial-style-two-items bg-gray bg-cover wow fadeInUp" style="background-image: url({% static 'assets/img/shape/wooden.svg' %});">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="testimonial-style-two-info">
+                        <h4 class="sub-title">What our clients say</h4>
+                        <h2 class="title">Real reviews from Net Express Courier customers</h2>
+                        <div class="user-card">
+                            <img src="{% static 'assets/img/team/v3.jpg' %}"alt="Image Not Found">
+                            <img src="{% static 'assets/img/team/v4.jpg' %}"alt="Image Not Found">
+                            <img src="{% static 'assets/img/team/v5.jpg' %}"alt="Image Not Found">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="testimonial-style-two-contents">
+                        <div class="testimonial-style-two-carousel swiper">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Single Item -->
+                                <div class="swiper-slide">
+                                    <div class="testimonial-style-two-item">
+                                        <div class="left-info"></div>
+                                        <div class="right-info">
+                                            <div class="icon">
+                                                <img src="{% static 'assets/img/icon/quote.svg' %}"alt="Image Not Found">
+                                            </div>
+                                            <p>
+                                                I recently used <strong>Net Express Courier</strong> for a shipment of goods across the country, and I couldn't be happier with the service. From the moment I reached out, their support team was incredibly helpful, and the delivery was right on time.
+                                            </p>
+                                            <div class="provider">
+                                                <h4>Rachel Ballinger</h4>
+                                                <span>CEO, Bizzbreak Inc</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+
+                                <!-- Single Item -->
+                                <div class="swiper-slide">
+                                    <div class="testimonial-style-two-item">
+                                        <div class="left-info"></div>
+                                        <div class="right-info">
+                                            <div class="icon">
+                                                <img src="{% static 'assets/img/icon/quote.svg' %}"alt="Image Not Found">
+                                            </div>
+                                            <p>
+                                                I’ve used <strong>Net Express Courier</strong> multiple times for urgent deliveries, and they’ve always impressed me with their professionalism and speed. Truly reliable logistics partners.
+                                            </p>
+                                            <div class="provider">
+                                                <h4>Daniyel Joe</h4>
+                                                <span>Customer, Royal Ins</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+
+                                <!-- Single Item -->
+                                <div class="swiper-slide">
+                                    <div class="testimonial-style-two-item">
+                                        <div class="left-info"></div>
+                                        <div class="right-info">
+                                            <div class="icon">
+                                                <img src="{% static 'assets/img/icon/quote.svg' %}"alt="Image Not Found">
+                                            </div>
+                                            <p>
+                                                Our company relies on <strong>Net Express Courier</strong> for warehousing and international shipping. Their seamless service has saved us time and costs — highly recommended.
+                                            </p>
+                                            <div class="provider">
+                                                <h4>Kamal Abraham</h4>
+                                                <span>Co-Founder, Marns</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+                            </div>
+
+                            <!-- Navigation -->
+                            <div class="testimonial-two-navs">
+                                <div class="testimonial-style-two-prev">
+                                    <svg width="27" height="10" viewBox="0 0 27 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27 9H3L9.9 1" stroke="#ffffff" stroke-width="2"></path>
+                                    </svg>
+                                </div>
+                                <div class="testimonial-style-two-next">
+                                    <svg width="27" height="10" viewBox="0 0 27 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 9H24L17.1 1" stroke="#ffffff" stroke-width="2"></path>
+                                    </svg>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Testimonial  -->
+
+
+    <!-- Start Call To Action 
+    ============================================= -->
+    <div id="quote" class="call-to-action-style-one-area default-padding shadow dark text-light text-center bg-cover" style="background-image: url({% static 'assets/img/banner/12.jpg' %});">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <h2 class="title split-text">Where shipping meets satisfaction.</h2>
+                    <div class="button mt-40">
+                        <a class="btn-style-one theme wow fadeInUp" href="contact-us.html">
+                            <div class="icon">
+                                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <span>Learn More</span> 
+                            <div class="icon">
+                                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Start Call To Action -->
+
+    
+   
+<!-- Start Footer 
+============================================= -->
+<footer class="bg-dark-secondary footer-style-two overflow-hidden text-light">
+    <div class="container">
+        <div class="f-items default-padding">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-style-two-items">
+                        
+                        <!-- About Section -->
+                        <div class="footer-item about">
+                            <div class="footer-logo">
+                                <img src="{% static 'assets/img/logo_light.png' %}" alt="Net Express Courier Logo">
+                            </div>
+                            <div class="f-item">
+                                <p>
+                                    Net Express Courier offers 24/7 customer support, fast delivery, and up to 70% savings on shipping costs with all major carriers.
+                                </p>
+                                <form class="newsletter-form-style-one" action="#">
+                                    <input type="email" placeholder="Your Email" class="form-control" name="email">
+                                    <button type="submit">
+                                        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 17L17 1H7.8" stroke="white" stroke-width="2"></path>
+                                        </svg>
+                                    </button>  
+                                </form>
+                                <ul class="footer-social">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><img src="{% static 'assets/img/icon/twitter-x.png' %}" alt="X"></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div class="footer-item">
+                            <div class="f-item link">
+                                <h4 class="widget-title">Quick Links</h4>
+                                <ul>
+                                    <li><a href="about-us.html">Company Profile</a></li>
+                                    <li><a href="contact-us.html">Help Center</a></li>
+                                    <li><a href="about-us.html">Career</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Services -->
+                        <div class="footer-item">
+                            <div class="f-item link">
+                                <h4 class="widget-title">Our Services</h4>
+                                <ul>
+                                    <li><a href="#">Less Than Truckload</a></li>
+                                    <li><a href="#">Rail Freight Shipping</a></li>
+                                    <li><a href="#">Hot Shot Trucking</a></li>
+                                    <li><a href="#">Freight Forwarding</a></li>
+                                    <li><a href="#">Container Freight</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Contact -->
+                        <div class="footer-item">
+                            <div class="f-item contact">
+                                <h4 class="widget-title">Get in Touch</h4>
+                                <p>
+                                    123 Main Street, Suite 200<br> Anytown, State Name
+                                </p>
+                                <ul class="footer-address">
+                                    <li>
+                                        <a href="tel:+196428563364"><i class="fas fa-phone-alt"></i> +(964)-2856-3364</a>
+                                    </li>
+                             
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>© Copyright 2025. All Rights Reserved by <a href="#">Net Express Courier</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </div>
+</footer>
+<!-- End Footer -->
+
+
+
+    
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="{% static 'assets/js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.appear.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/progress-bar.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/count-to.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/YTPlayer.min.js' %}"></script>
+    <script src="{% static 'assets/js/validnavs.js' %}"></script>
+    <script src="{% static 'assets/js/gsap.js' %}"></script>
+    <script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'assets/js/SplitText.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+
+
+<!-- Loader Modal (hidden by default) -->
+<div id="loadingModal" class="loading-modal" role="dialog" aria-hidden="true" aria-live="polite" aria-label="Loading">
+    <div class="loading-card" role="status">
+        <div class="loading-spinner" aria-hidden="true"></div>
+        <div class="loading-text">Tracking your shipment…</div>
+    </div>
+</div>
+
+<style>
+/* base reset for the loader (keeps it off-screen until .show is added) */
+.loading-modal {
+    display: none;              /* hidden by default */
+    position: fixed;
+    inset: 0;                   /* top:0; right:0; bottom:0; left:0 */
+    background: rgba(0,0,0,0.55);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* visible state */
+.loading-modal.show {
+    display: flex;              /* visible and centered */
+}
+
+/* card so spinner looks modern (white box) */
+.loading-card {
+    background: #ffffff;
+    padding: 26px 34px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 240px;
+    box-shadow: 0 12px 30px rgba(8,20,30,0.25);
+    text-align: center;
+}
+
+/* spinner circle */
+.loading-spinner {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 6px solid #eef2f4;
+    border-top-color: #104B59; /* brand color */
+    animation: spin 0.9s linear infinite;
+    margin-bottom: 14px;
+}
+
+/* text */
+.loading-text {
+    color: #0b2a2f;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* small button styling hint (optional) */
+.track-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: #f0f8f6;
+    color: #104B59;
+    border: 1px solid rgba(16,75,89,0.08);
+    cursor: pointer;
+}
+
+/* spinner keyframes */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+
+<script>
+(function() {
+    const form = document.getElementById('trackingForm');
+    const modal = document.getElementById('loadingModal');
+    const submitBtn = document.getElementById('trackBtn');
+    const input = document.getElementById('tracking_number');
+
+    if (!form || !modal) return;
+
+    form.addEventListener('submit', function(e) {
+        const tracking = (input.value || '').trim();
+
+        // simple client-side validation; prevents submission if empty
+        if (!tracking) {
+            e.preventDefault();
+            input.focus();
+            if (!document.getElementById('tracking-error')) {
+                const err = document.createElement('div');
+                err.id = 'tracking-error';
+                err.style.color = 'crimson';
+                err.style.marginTop = '8px';
+                err.textContent = 'Please enter a tracking number.';
+                input.parentNode.appendChild(err);
+            }
+            return;
+        }
+
+        // prevent immediate submission
+        e.preventDefault();
+
+        // disable the submit button to avoid double submits
+        submitBtn.disabled = true;
+        submitBtn.setAttribute('aria-disabled', 'true');
+
+        // show the loader
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden', 'false');
+
+        // delay actual submission (e.g. 1.5 seconds)
+        setTimeout(() => {
+            form.submit();
+        },1500); // you can change the delay (milliseconds)
+    });
+
+    // If user navigates back to this page, ensure loader is hidden
+    window.addEventListener('pageshow', function() {
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden', 'true');
+        submitBtn.disabled = false;
+        submitBtn.removeAttribute('aria-disabled');
+    });
+})();
+</script>
+
+
+</body>
+</html>
