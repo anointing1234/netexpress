@@ -118,7 +118,6 @@ class AccountAdmin(ModelAdmin, BaseUserAdmin):
 #     fields = ("status", "location_country", "location_city", "description", "timestamp")
 #     ordering = ("-timestamp",)
 #     readonly_fields = ("timestamp",)
-
 # ----------------------
 # COURIER ADMIN
 # ----------------------
@@ -201,25 +200,28 @@ class CourierAdmin(ModelAdmin):
     # -------------------------
     def send_receipt_email(self, request, queryset):
         """
-        Sends the waybill receipt as a fully styled HTML email with barcode image.
+        Sends the waybill receipt as a fully styled HTML email with a hosted barcode image.
         """
+        from django.core.files.storage import default_storage
+        from django.core.files.base import ContentFile
+
         for courier in queryset:
             # Generate barcode as PNG image in memory
             CODE128 = barcode.get_barcode_class('code128')
             buffer = BytesIO()
             CODE128(courier.tracking_number, writer=ImageWriter()).write(buffer)
 
-            # Create MIME image for inline embedding
-            barcode_image = MIMEImage(buffer.getvalue())
-            barcode_image.add_header('Content-ID', '<barcode_image>')
-            barcode_image.add_header('Content-Disposition', 'inline', filename="barcode.png")
+            # Save barcode file into storage (media/barcodes/)
+            filename = f"barcodes/{courier.tracking_number}.png"
+            file_path = default_storage.save(filename, ContentFile(buffer.getvalue()))
+            barcode_url = request.build_absolute_uri(default_storage.url(file_path))
 
-            # Render HTML template with cid reference
+            # Render HTML template with hosted barcode URL
             html_message = render_to_string(
                 'courier_receipt.html', 
                 {
                     'courier': courier,
-                    'barcode_cid': "cid:barcode_image"
+                    'barcode_url': barcode_url,
                 }
             )
 
@@ -230,7 +232,6 @@ class CourierAdmin(ModelAdmin):
                 to=[courier.receiver_email]
             )
             email.content_subtype = 'html'
-            email.attach(barcode_image)  # attach barcode inline
 
             try:
                 email.send()
