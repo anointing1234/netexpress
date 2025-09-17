@@ -191,7 +191,7 @@
                                     </div>
                                     <div class="info">
                                         <p>Have any Questions?</p>
-                                        <h5><a href="mailto:info@NetExpress.com">info@NetExpress.com</a></h5>
+                                        <h5><a href="mailto:info@netexpresscs.com">info@netexpresscs.com</a></h5>
                                     </div>
                                 </div>
                             </li>
@@ -249,7 +249,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="left-info text-center">
-                        <a href="services-2.html" class="circle-button-two">
+                        <a href="{% url 'services' %}" class="circle-button-two">
                             <svg viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 17L17 1H7.8" stroke="#232323" stroke-width="2"></path>
                             </svg>
@@ -394,7 +394,7 @@
                                         <div class="form-group">
                                             <label for="email">Your Email</label>
                                             <div class="input-group">
-                                                <input class="form-control" id="email" name="email" placeholder="info@netexpress.com" type="email">
+                                                <input class="form-control" id="email" name="email" placeholder="info@netexpresscs.com" type="email">
                                                 <i class="fas fa-envelope"></i>
                                             </div>
                                         </div>
@@ -445,15 +445,15 @@
 
                         <!-- Tab 2: Real-Time Tracking -->
                         <div class="tab-pane fade" id="tabs_2" role="tabpanel" aria-labelledby="tab_2">
-                            <form action="#">
+                                <form id="trackingForm" action="{% url 'tracking' %}" method="get">
+                                <label for="tracking-number">Tracking Number</label>
                                 <div class="form-group">
-                                    <label for="tracking-number">Tracking Number</label>
                                     <div class="input-group">
-                                        <input class="form-control" id="tracking-number" name="tracking-number" placeholder="Eg: NET123456789" type="text">
+                                        <input class="form-control" id="tracking_number" name="tracking_number" placeholder="Enter Tracking Number" type="text" required>
                                         <i class="fas fa-sticky-note"></i>
                                     </div>
                                 </div>
-                                <button type="submit">
+                                <button type="submit" name="trackBtn" id="trackBtn">
                                     Track Shipment
                                     <svg viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0 7H18L12.825 1" stroke="white"/>
@@ -756,6 +756,139 @@
     <script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
     <script src="{% static 'assets/js/SplitText.min.js' %}"></script>
     <script src="{% static 'assets/js/main.js' %}"></script>
+
+    
+<!-- Loader Modal (hidden by default) -->
+<div id="loadingModal" class="loading-modal" role="dialog" aria-hidden="true" aria-live="polite" aria-label="Loading">
+    <div class="loading-card" role="status">
+        <div class="loading-spinner" aria-hidden="true"></div>
+        <div class="loading-text">Tracking your shipment…</div>
+    </div>
+</div>
+
+<style>
+/* base reset for the loader (keeps it off-screen until .show is added) */
+.loading-modal {
+    display: none;              /* hidden by default */
+    position: fixed;
+    inset: 0;                   /* top:0; right:0; bottom:0; left:0 */
+    background: rgba(0,0,0,0.55);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* visible state */
+.loading-modal.show {
+    display: flex;              /* visible and centered */
+}
+
+/* card so spinner looks modern (white box) */
+.loading-card {
+    background: #ffffff;
+    padding: 26px 34px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 240px;
+    box-shadow: 0 12px 30px rgba(8,20,30,0.25);
+    text-align: center;
+}
+
+/* spinner circle */
+.loading-spinner {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 6px solid #eef2f4;
+    border-top-color: #104B59; /* brand color */
+    animation: spin 0.9s linear infinite;
+    margin-bottom: 14px;
+}
+
+/* text */
+.loading-text {
+    color: #0b2a2f;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* small button styling hint (optional) */
+.track-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: #f0f8f6;
+    color: #104B59;
+    border: 1px solid rgba(16,75,89,0.08);
+    cursor: pointer;
+}
+
+/* spinner keyframes */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+
+<script>
+(function() {
+    const form = document.getElementById('trackingForm');
+    const modal = document.getElementById('loadingModal');
+    const submitBtn = document.getElementById('trackBtn');
+    const input = document.getElementById('tracking_number');
+
+    if (!form || !modal) return;
+
+    form.addEventListener('submit', function(e) {
+        const tracking = (input.value || '').trim();
+
+        // simple client-side validation; prevents submission if empty
+        if (!tracking) {
+            e.preventDefault();
+            input.focus();
+            if (!document.getElementById('tracking-error')) {
+                const err = document.createElement('div');
+                err.id = 'tracking-error';
+                err.style.color = 'crimson';
+                err.style.marginTop = '8px';
+                err.textContent = 'Please enter a tracking number.';
+                input.parentNode.appendChild(err);
+            }
+            return;
+        }
+
+        // prevent immediate submission
+        e.preventDefault();
+
+        // disable the submit button to avoid double submits
+        submitBtn.disabled = true;
+        submitBtn.setAttribute('aria-disabled', 'true');
+
+        // show the loader
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden', 'false');
+
+        // delay actual submission (e.g. 1.5 seconds)
+        setTimeout(() => {
+            form.submit();
+        },1500); // you can change the delay (milliseconds)
+    });
+
+    // If user navigates back to this page, ensure loader is hidden
+    window.addEventListener('pageshow', function() {
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden', 'true');
+        submitBtn.disabled = false;
+        submitBtn.removeAttribute('aria-disabled');
+    });
+})();
+</script>
+
 
 </body>
 </html>
