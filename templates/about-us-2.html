@@ -17,7 +17,7 @@
     <meta property="og:title" content="Net Express Courier - Fast & Reliable Delivery Services">
     <meta property="og:description" content="Your trusted partner for fast, reliable, and affordable courier & logistics services.">
     <meta property="og:image" content="{% static 'assets/img/logo_dark.png' %}">
-    <meta property="og:url" content="https://www.netexpress.com">
+    <meta property="og:url" content="https://www.netexpresscs.com">
     <meta property="og:type" content="website">
 
     <!-- ✅ Twitter Card -->
@@ -35,49 +35,86 @@
 
     
     <!-- ✅ Schema.org Markup (Business Info for Google) -->
-    <script type="application/ld+json">
+   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CourierService",
+  "name": "Net Express Courier",
+  "url": "https://www.netexpresscs.com",
+  "logo": "https://www.netexpresscs.com/static/assets/img/logo_dark.png",
+  "image": "https://www.netexpresscs.com/static/assets/img/logo_dark.png",
+  "description": "Net Express Courier offers fast, reliable, and affordable delivery services. From local courier to international logistics, we ensure secure and on-time shipping solutions.",
+  "telephone": "+234-800-123-4567",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Courier Street",
+    "addressLocality": "Lagos",
+    "addressRegion": "LA",
+    "postalCode": "100001",
+    "addressCountry": "NG"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 6.5244,
+    "longitude": 3.3792
+  },
+  "openingHoursSpecification": [
     {
-      "@context": "https://schema.org",
-      "@type": "CourierService",
-      "name": "Net Express Courier",
-      "image": "https://www.netexpress.com/assets/img/logo_dark.png' %}",
-      "@id": "https://www.netexpress.com",
-      "url": "https://www.netexpress.com",
-      "telephone": "+234-800-123-4567",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Courier Street",
-        "addressLocality": "Lagos",
-        "addressRegion": "LA",
-        "postalCode": "100001",
-        "addressCountry": "NG"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 6.5244,
-        "longitude": 3.3792
-      },
-      "openingHoursSpecification": [{
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "08:00",
-        "closes": "20:00"
-      }],
-      "sameAs": [
-        "https://facebook.com/netexpress",
-        "https://twitter.com/netexpress",
-        "https://instagram.com/netexpress"
-      ]
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
     }
-    </script>
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+234-800-123-4567",
+    "contactType": "Customer Service",
+    "areaServed": "NG",
+    "availableLanguage": ["English"]
+  },
+  "sameAs": [
+    "https://facebook.com/netexpress",
+    "https://twitter.com/netexpress",
+    "https://instagram.com/netexpress"
+  ],
+  "hasPart": [
+    {
+      "@type": "WebPage",
+      "name": "Home",
+      "url": "https://www.netexpresscs.com/home/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "About Us",
+      "url": "https://www.netexpresscs.com/about_us/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Services",
+      "url": "https://www.netexpresscs.com/services/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Contact",
+      "url": "https://www.netexpresscs.com/contact/"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebSite",
+    "@id": "https://www.netexpresscs.com/"
+  }
+}
+</script>
+
 
 
     <!-- ========== Start Stylesheet ========== -->
