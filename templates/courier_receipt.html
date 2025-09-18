@@ -15,7 +15,7 @@
         <strong>Tracking ID: {{ courier.tracking_number }}</strong> has been processed.
         <br>
         You can check the real-time status here:  
-        <a href="https://netexpressc.com/{% url 'tracking' %}?tracking_id={{ courier.tracking_number }}" 
+        <a href="https://netexpressc.com{% url 'tracking' %}?tracking_id={{ courier.tracking_number }}" 
            style="color:#007bff; text-decoration:none;" target="_blank">
            Track Your Package
         </a>
