@@ -26,26 +26,19 @@
 <div id="print-receipt">
     <div style="width: 700px; margin: auto; padding: 25px; font-family: 'Arial', sans-serif; border: 1px solid #000; background-color: #fff;">
         
-        <!-- Header -->
-     <!-- Header -->
-<!-- Header (Email Compatible) -->
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:15px;">
-  <tr>
-    <!-- Logo (Left) -->
-    <td align="left" valign="middle">
-      <img src="https://netexpressc.com/static/assets/img/logo_dark.png" 
-           alt="Company Logo" 
-           style="height:55px; display:block;">
-    </td>
-
-    <!-- Title (Right) -->
-    <td align="right" valign="middle" style="font-family: Arial, sans-serif;">
-      <h2 style="color:#007bff; margin:0; font-size:22px; font-weight:bold;">Waybill Receipt</h2>
-    </td>
-  </tr>
-</table>
-
-
+        <!-- Header (Email Compatible) -->
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:15px;">
+          <tr>
+            <td align="left" valign="middle">
+              <img src="{% static 'assets/img/logo_dark.png' %}" 
+                   alt="Company Logo" 
+                   style="height:55px; display:block;">
+            </td>
+            <td align="right" valign="middle" style="font-family: Arial, sans-serif;">
+              <h2 style="color:#007bff; margin:0; font-size:22px; font-weight:bold;">Waybill Receipt</h2>
+            </td>
+          </tr>
+        </table>
 
         <hr style="border: 2px solid #007bff; margin-bottom: 15px;">
 
@@ -135,22 +128,20 @@
         </table>
 
         <!-- Barcode -->
-       <!-- Barcode -->
-<div style="text-align: center; margin-top: 15px;">
-    <img src="{{ barcode_url }}" alt="Barcode" style="max-width:280px; height:auto;">
-</div>
-
+        <div style="text-align: center; margin-top: 15px;">
+            <img src="{{ barcode_url }}" alt="Barcode" style="max-width:280px; height:auto;">
+        </div>
 
         <!-- Signature Section -->
         <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
           <tr>
             <td style="width: 50%; padding: 15px; border-top: 1px solid #000; text-align: center;">
                 <strong>Shipper Signature</strong><br>
-                <img src="https://netexpressc.com/static/assets/img/shippment.png" alt="Shipper Signature" style="width:180px; height:50px; object-fit:contain;">
+                <img src="{% static 'assets/img/shippment.png' %}" alt="Shipper Signature" style="width:180px; height:50px; object-fit:contain;">
             </td>
             <td style="width: 50%; padding: 15px; border-top: 1px solid #000; text-align: center;">
                 <strong>Carrier Signature</strong><br>
-                <img src="https://netexpressc.com/static/assets/img/courier.png" alt="Carrier Signature" style="width:180px; height:50px; object-fit:contain;">
+                <img src="{% static 'assets/img/courier.png' %}" alt="Carrier Signature" style="width:180px; height:50px; object-fit:contain;">
             </td>
           </tr>
         </table>
