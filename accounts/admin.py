@@ -13,7 +13,11 @@ from io import BytesIO
 from email.mime.image import MIMEImage
 import base64
 import barcode
+from xhtml2pdf import pisa
 from barcode.writer import ImageWriter
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+from django.core.mail import EmailMultiAlternatives
 
 INLINE_INPUT_STYLE = (
     "width:360px; padding:10px; border:1px solid #e5e7eb; "
@@ -68,7 +72,6 @@ class AccountCreationForm(forms.ModelForm):
             user.save()
         return user
 
-
 class AccountChangeForm(forms.ModelForm):
     password = ReadOnlyPasswordHashField(
         label="Password (hashed)",
@@ -78,7 +81,6 @@ class AccountChangeForm(forms.ModelForm):
     class Meta:
         model = Account
         fields = ("email", "first_name", "last_name", "phone_number", "password", "is_active", "is_staff", "is_superuser")
-
 
 @admin.register(Account)
 class AccountAdmin(ModelAdmin, BaseUserAdmin):
@@ -106,18 +108,6 @@ class AccountAdmin(ModelAdmin, BaseUserAdmin):
 
     readonly_fields = ("last_login", "date_joined")
 
-
-
-# ----------------------
-# INLINE HISTORY IN COURIER ADMIN
-# ----------------------
-
-# class CourierTrackingHistoryInline(TabularInline):
-#     model = CourierTrackingHistory
-#     extra = 0
-#     fields = ("status", "location_country", "location_city", "description", "timestamp")
-#     ordering = ("-timestamp",)
-#     readonly_fields = ("timestamp",)
 # ----------------------
 # COURIER ADMIN
 # ----------------------
@@ -127,120 +117,94 @@ class CourierAdmin(ModelAdmin):
         "tracking_number", "status", "current_location_country", "current_location_city",
         "estimated_delivery_date"
     )
-  
     list_filter = ("status", "receiver_country", "sender_country", "category")
     search_fields = (
         "tracking_number", "receiver_name", "receiver_email",
         "sender_name", "sender_email"
     )
     ordering = ("-created_at",)
-
     list_editable = (
         "status",
         "current_location_country",
         "current_location_city",
         "estimated_delivery_date",
     )
-
-    fieldsets = (
-        ("Tracking Information", {
-            "fields": (
-                "tracking_number", 
-                "status", 
-                "current_location_country", 
-                "current_location_city",
-                "trailer_number",
-                "seal_number",
-                "scac",
-            )
-        }),
-        ("Receiver Details", {
-            "fields": (
-                "receiver_name", 
-                "receiver_contact_number", 
-                "receiver_email",
-                "receiver_address", 
-                "receiver_country", 
-                "receiver_city"
-            )
-        }),
-        ("Sender Details", {
-            "fields": (
-                "sender_name", 
-                "sender_contact_number", 
-                "sender_email",
-                "sender_address", 
-                "sender_country", 
-                "sender_city"
-            )
-        }),
-        ("Package Details", {
-            "fields": (
-                "item_description", 
-                "number_of_items", 
-                "parcel_colour",
-                "weight", 
-                "rate", 
-                "category", 
-                "destination_country", 
-                "destination_city"
-            )
-        }),
-        ("Timeline", {
-            "fields": ("date_sent", "estimated_delivery_date")
-        }),
-    )
-
     readonly_fields = ("tracking_number", "created_at", "updated_at")
-
     actions = ['send_receipt_email']
 
-    # -------------------------
-    # Custom Admin Action
-    # -------------------------
     def send_receipt_email(self, request, queryset):
         """
-        Sends the waybill receipt as a fully styled HTML email with a hosted barcode image.
+        Sends a short professional email with a PDF receipt attachment.
         """
-        from django.core.files.storage import default_storage
-        from django.core.files.base import ContentFile
-
         for courier in queryset:
-            # Generate barcode as PNG image in memory
+            # 1️⃣ Generate barcode image
             CODE128 = barcode.get_barcode_class('code128')
             buffer = BytesIO()
             CODE128(courier.tracking_number, writer=ImageWriter()).write(buffer)
-
-            # Save barcode file into storage (media/barcodes/)
             filename = f"barcodes/{courier.tracking_number}.png"
             file_path = default_storage.save(filename, ContentFile(buffer.getvalue()))
             barcode_url = request.build_absolute_uri(default_storage.url(file_path))
 
-            # Render HTML template with hosted barcode URL
-            html_message = render_to_string(
-                'courier_receipt.html', 
-                {
-                    'courier': courier,
-                    'barcode_url': barcode_url,
-                }
+            # 2️⃣ Email message (short, professional)
+            text_message = f"""
+Dear {courier.receiver_name or 'Customer'},
+
+Your shipment with Tracking ID: {courier.tracking_number} has been processed successfully.
+
+You can track it online:
+https://netexpressc.com/tracking/?tracking_id={courier.tracking_number}
+
+Please here is  your official PDF receipt attached.
+
+Thank you for choosing NetExpress.
+            """
+
+            email = EmailMultiAlternatives(
+                subject=f"Your Shipment Receipt - {courier.tracking_number}",
+                body=text_message,
+                to=[courier.receiver_email],
             )
 
-            # Send HTML email
-            email = EmailMessage(
-                subject=f"Waybill Receipt - {courier.tracking_number}",
-                body=html_message,
-                to=[courier.receiver_email]
+            # 3️⃣ Render HTML receipt for PDF
+            pdf_html = render_to_string(
+                "courier_receipt.html",
+                {"courier": courier, "barcode_url": barcode_url}
             )
-            email.content_subtype = 'html'
 
+            # 4️⃣ Convert HTML to PDF
+            pdf_buffer = BytesIO()
+            pisa_status = pisa.CreatePDF(pdf_html, dest=pdf_buffer, encoding='utf-8')
+
+            if pisa_status.err:
+                self.message_user(
+                    request,
+                    f"Failed to generate PDF for {courier.tracking_number}.",
+                    level="error"
+                )
+                continue
+
+            pdf_buffer.seek(0)
+            email.attach(
+                f"Receipt_{courier.tracking_number}.pdf",
+                pdf_buffer.read(),
+                "application/pdf"
+            )
+
+            # 5️⃣ Send email
             try:
                 email.send()
-                self.message_user(request, f"Receipt sent successfully to {courier.receiver_email}")
+                self.message_user(
+                    request,
+                    f"Receipt sent successfully to {courier.receiver_email}"
+                )
             except Exception as e:
-                self.message_user(request, f"Failed to send to {courier.receiver_email}: {str(e)}", level='error')
+                self.message_user(
+                    request,
+                    f"Failed to send to {courier.receiver_email}: {str(e)}",
+                    level="error"
+                )
 
-    send_receipt_email.short_description = "Send Waybill Receipt to Receiver Email"
-
+    send_receipt_email.short_description = "Send PDF Receipt to Receiver Email"
 # ----------------------
 # COURIER TRACKING HISTORY ADMIN
 # ----------------------
