@@ -4,20 +4,11 @@ from django import forms
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from .models import Account, Courier, CourierTrackingHistory
-from django.db.models.signals import post_save, pre_save
+from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
-from io import BytesIO
-from email.mime.image import MIMEImage
-import base64
-import barcode
-from xhtml2pdf import pisa
-from barcode.writer import ImageWriter
-from django.core.files.storage import default_storage
-from django.core.files.base import ContentFile
-from django.core.mail import EmailMultiAlternatives
 
 INLINE_INPUT_STYLE = (
     "width:360px; padding:10px; border:1px solid #e5e7eb; "
@@ -27,7 +18,6 @@ INLINE_INPUT_STYLE = (
 # ----------------------
 # ACCOUNT ADMIN
 # ----------------------
-
 class AccountCreationForm(forms.ModelForm):
     password1 = forms.CharField(
         label="Password",
@@ -67,7 +57,7 @@ class AccountCreationForm(forms.ModelForm):
 
     def save(self, commit=True):
         user = super().save(commit=False)
-        user.set_password(self.cleaned_data["password1"])  # hashed password
+        user.set_password(self.cleaned_data["password1"])
         if commit:
             user.save()
         return user
@@ -134,68 +124,27 @@ class CourierAdmin(ModelAdmin):
 
     def send_receipt_email(self, request, queryset):
         """
-        Sends a short professional email with a PDF receipt attachment.
+        Sends a professional HTML email to the receiver without PDF attachment.
         """
         for courier in queryset:
-            # 1️⃣ Generate barcode image
-            CODE128 = barcode.get_barcode_class('code128')
-            buffer = BytesIO()
-            CODE128(courier.tracking_number, writer=ImageWriter()).write(buffer)
-            filename = f"barcodes/{courier.tracking_number}.png"
-            file_path = default_storage.save(filename, ContentFile(buffer.getvalue()))
-            barcode_url = request.build_absolute_uri(default_storage.url(file_path))
-
-            # 2️⃣ Email message (short, professional)
-            text_message = f"""
-Dear {courier.receiver_name or 'Customer'},
-
-Your shipment with Tracking ID: {courier.tracking_number} has been processed successfully.
-
-You can track it online:
-https://netexpressc.com/tracking/?tracking_id={courier.tracking_number}
-
-Please here is  your official PDF receipt attached.
-
-Thank you for choosing NetExpress.
-            """
+            html_message = render_to_string(
+                "courier_receipt.html",
+                {"courier": courier}  # No PDF/barcode
+            )
+            plain_message = strip_tags(html_message)
 
             email = EmailMultiAlternatives(
                 subject=f"Your Shipment Receipt - {courier.tracking_number}",
-                body=text_message,
+                body=plain_message,
                 to=[courier.receiver_email],
             )
+            email.attach_alternative(html_message, "text/html")
 
-            # 3️⃣ Render HTML receipt for PDF
-            pdf_html = render_to_string(
-                "courier_receipt.html",
-                {"courier": courier, "barcode_url": barcode_url}
-            )
-
-            # 4️⃣ Convert HTML to PDF
-            pdf_buffer = BytesIO()
-            pisa_status = pisa.CreatePDF(pdf_html, dest=pdf_buffer, encoding='utf-8')
-
-            if pisa_status.err:
-                self.message_user(
-                    request,
-                    f"Failed to generate PDF for {courier.tracking_number}.",
-                    level="error"
-                )
-                continue
-
-            pdf_buffer.seek(0)
-            email.attach(
-                f"Receipt_{courier.tracking_number}.pdf",
-                pdf_buffer.read(),
-                "application/pdf"
-            )
-
-            # 5️⃣ Send email
             try:
                 email.send()
                 self.message_user(
                     request,
-                    f"Receipt sent successfully to {courier.receiver_email}"
+                    f"Receipt email sent successfully to {courier.receiver_email}"
                 )
             except Exception as e:
                 self.message_user(
@@ -204,11 +153,11 @@ Thank you for choosing NetExpress.
                     level="error"
                 )
 
-    send_receipt_email.short_description = "Send PDF Receipt to Receiver Email"
+    send_receipt_email.short_description = "Send Receipt Email to Receiver"
+
 # ----------------------
 # COURIER TRACKING HISTORY ADMIN
 # ----------------------
-
 @admin.register(CourierTrackingHistory)
 class CourierTrackingHistoryAdmin(ModelAdmin):
     list_display = ("courier", "status", "location_country", "location_city", "timestamp")
@@ -216,14 +165,14 @@ class CourierTrackingHistoryAdmin(ModelAdmin):
     search_fields = ("courier__tracking_number", "location_city__name", "description")
     ordering = ("-timestamp",)
 
-
 # ----------------------
 # SIGNALS TO AUTO-CREATE HISTORY
 # ----------------------
-
 @receiver(post_save, sender=Courier)
 def create_or_update_tracking_history(sender, instance, created, **kwargs):
-    """Automatically log courier creation and updates to history."""
+    """
+    Automatically log courier creation and updates to history.
+    """
     if created:
         # New courier -> create initial history record
         CourierTrackingHistory.objects.create(
