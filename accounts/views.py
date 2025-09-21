@@ -18,6 +18,8 @@ def contact(request):
     return render(request,'contact-us.html')
 
 
+
+
 def tracking(request):
     tracking_number = request.GET.get("tracking_number", '').strip()
 
@@ -31,5 +33,8 @@ def tracking(request):
             })
 
     return render(request, "tracking_page.html")
+
+
+
 
 
