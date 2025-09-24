@@ -72,7 +72,11 @@ INSTALLED_APPS = [
     'cities_light',
     "smart_selects",
     "anymail",
+    "django.contrib.sitemaps",
+    "django.contrib.sites",
 ]
+
+SITE_ID = 1
 
 
 

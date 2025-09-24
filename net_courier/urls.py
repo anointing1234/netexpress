@@ -14,20 +14,47 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
-from django.urls import path,include,re_path
+from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
-from django.views.static import serve 
+from django.views.static import serve
+from django.http import HttpResponse
+from django.contrib.sitemaps.views import sitemap
+
+# Import your sitemap
+from accounts.sitemaps import StaticViewSitemap   # adjust app name if different
+
+sitemaps_dict = {
+    "static": StaticViewSitemap,
+}
+
+# Simple robots.txt view
+def robots_txt(request):
+    content = (
+        "User-Agent: *\n"
+        "Disallow:\n"
+        f"Sitemap: https://netexpressc.com/sitemap.xml\n"
+    )
+    return HttpResponse(content, content_type="text/plain")
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('accounts.urls')),
+    path('', include('accounts.urls')),
     path("chaining/", include("smart_selects.urls")),
-    re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
-    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
-]
-if settings.DEBUG:
-    urlpatterns +=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
+    # Sitemap
+    path("sitemap.xml", sitemap, {"sitemaps": sitemaps_dict}, name="sitemap"),
+
+    # Robots.txt
+    path("robots.txt", robots_txt, name="robots_txt"),
+
+    # Static & Media
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
