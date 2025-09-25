@@ -33,85 +33,117 @@
     <!-- ========== Favicon Icon ========== -->
     <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}" type="image/x-icon">
 
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CourierService",
-      "name": "Net Express Courier",
-      "url": "https://netexpressc.com",
-      "logo": "https://netexpressc.com/static/assets/img/logo_dark.png",
-      "image": "https://netexpressc.com/static/assets/img/logo_dark.png",
-      "description": "Net Express Courier offers fast, reliable, and affordable delivery services. From local courier to national logistics, we ensure secure and on-time shipping solutions.",
-      "telephone": "+1-850-555-0199",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "7366 Manatee St",
-        "addressLocality": "Navarre",
-        "addressRegion": "FL",
-        "postalCode": "32566",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 30.4016,
-        "longitude": -86.8636
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-          ],
-          "opens": "08:00",
-          "closes": "20:00"
-        }
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1-850-555-0199",
-        "contactType": "Customer Service",
-        "areaServed": "US",
-        "availableLanguage": ["English"]
-      },
-      "sameAs": [
-        "https://facebook.com/netexpress",
-        "https://twitter.com/netexpress",
-        "https://instagram.com/netexpress"
-      ],
-      "hasPart": [
-        {
-          "@type": "WebPage",
-          "name": "Home",
-          "url": "https://netexpressc.com/"
-        },
-        {
-          "@type": "WebPage",
-          "name": "About Us",
-          "url": "https://netexpressc.com/about_us/"
-        },
-        {
-          "@type": "WebPage",
-          "name": "Services",
-          "url": "https://netexpressc.com/services/"
-        },
-        {
-          "@type": "WebPage",
-          "name": "Contact",
-          "url": "https://netexpressc.com/contact/"
-        }
-      ],
-      "mainEntityOfPage": {
-        "@type": "WebSite",
-        "@id": "https://netexpressc.com/"
-      }
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CourierService",
+  "@id": "https://netexpressc.com/#courier",
+  "name": "Net Express Courier",
+  "url": "https://netexpressc.com/",
+  "logo": "https://netexpressc.com/static/assets/img/logo_dark.png",
+  "image": "https://netexpressc.com/static/assets/img/logo_dark.png",
+  "description": "Net Express Courier offers fast, reliable, and affordable delivery services. From local courier to national logistics, we ensure secure and on-time shipping solutions.",
+  "telephone": "+1-850-555-0199",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "7366 Manatee St",
+    "addressLocality": "Navarre",
+    "addressRegion": "FL",
+    "postalCode": "32566",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 30.4016,
+    "longitude": -86.8636
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "08:00",
+    "closes": "20:00"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-850-555-0199",
+    "contactType": "Customer Service",
+    "areaServed": "US",
+    "availableLanguage": ["English"]
+  },
+  "sameAs": [
+    "https://facebook.com/netexpress",
+    "https://twitter.com/netexpress",
+    "https://instagram.com/netexpress"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebSite",
+    "@id": "https://netexpressc.com/#website",
+    "url": "https://netexpressc.com/",
+    "name": "Net Express Courier",
+    "publisher": {
+      "@id": "https://netexpressc.com/#courier"
     }
-    </script>
+  }
+}
+</script>
+
+<!-- ✅ Individual WebPage schema (place on each page, or repeat in one script block if preferred) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://netexpressc.com/about_us/#webpage",
+  "url": "https://netexpressc.com/about_us/",
+  "name": "About Us - Net Express Courier",
+  "isPartOf": {
+    "@id": "https://netexpressc.com/#website"
+  },
+  "about": {
+    "@id": "https://netexpressc.com/#courier"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://netexpressc.com/services/#webpage",
+  "url": "https://netexpressc.com/services/",
+  "name": "Our Services - Net Express Courier",
+  "isPartOf": {
+    "@id": "https://netexpressc.com/#website"
+  },
+  "about": {
+    "@id": "https://netexpressc.com/#courier"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://netexpressc.com/contact/#webpage",
+  "url": "https://netexpressc.com/contact/",
+  "name": "Contact Us - Net Express Courier",
+  "isPartOf": {
+    "@id": "https://netexpressc.com/#website"
+  },
+  "about": {
+    "@id": "https://netexpressc.com/#courier"
+  }
+}
+</script>
+
 
 
     <!-- ========== Start Stylesheet ========== -->
